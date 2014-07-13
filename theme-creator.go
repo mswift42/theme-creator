@@ -9,6 +9,20 @@ import (
 
 const test = `'((mainbg . {{.bg1}}) (mainfg . {{ .fg1}}))`
 
+// RGB struct, contains an uint8 each for
+// red, green and blue.
+type RGB struct {
+	r, g, b int
+}
+
+// NewRGB - Constructor for RGB struct.
+// takes 3 uint for red, green and blue and
+// returns a new RGB struct
+func NewRGB(r, g, b int) *RGB {
+	rgb := RGB{r: r, g: g, b: b}
+	return &rgb
+}
+
 func rgbToHex(r, g, b int64) (hex string) {
 	red := strconv.FormatInt(r, 16)
 	green := strconv.FormatInt(g, 16)

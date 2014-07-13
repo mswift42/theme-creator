@@ -68,3 +68,19 @@ func TestRgbToHex(t *testing.T) {
 		assert.Equal(actual, test.hex)
 	}
 }
+
+func TestRGB(t *testing.T) {
+	assert := assert.New(t)
+	rgb1 := RGB{r: 255, g: 255, b: 255}
+	assert.Equal(rgb1.r, 255)
+	rgb2 := RGB{r: 0, g: 0, b: 0}
+	assert.Equal(rgb2.r, 0)
+}
+
+func TestNewRGB(t *testing.T) {
+	assert := assert.New(t)
+	r1 := NewRGB(255, 255, 255)
+	assert.Equal(r1.r, 255)
+	r2 := NewRGB(255, 255, 0)
+	assert.Equal(r2.b, 0)
+}
