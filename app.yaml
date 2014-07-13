@@ -1,0 +1,27 @@
+application: emacsthemecreator
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /
+  static_files: webapp/app/index.html
+  upload: webapp/app/(.*\.html)
+
+- url: /css
+  static_dir: webapp/app/css
+
+- url: /img
+  static_dir: webapp/app/img
+
+- url: /js
+  static_dir: webapp/app/js
+
+- url: /lib
+  static_dir: webapp/app/lib
+
+- url: /partials
+  static_dir: webapp/app/partials
+
+- url: /.*
+  script: _go_app
