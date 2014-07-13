@@ -48,6 +48,14 @@ func (r RGB) Lighten(factor float64) RGB {
 	}
 	return NewRGB(newrgbslice[0], newrgbslice[1], newrgbslice[2])
 }
+func (r RGB) Darken(factor float64) RGB {
+	newrgbslice := []int{r.r, r.g, r.b}
+	for i, j := range newrgbslice {
+		darker := int(factor * float64(j))
+		newrgbslice[i] = darker
+	}
+	return NewRGB(newrgbslice[0], newrgbslice[1], newrgbslice[2])
+}
 
 func main() {
 	temp := template.Must(template.New("test").Parse(test))
