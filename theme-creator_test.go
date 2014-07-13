@@ -60,6 +60,27 @@ var convertColors = []struct {
 		hex: "#faf0e6",
 	},
 }
+var lightendedColors = []struct {
+	old     RGB
+	lighter RGB
+	factor  float64
+}{
+	{
+		old:     RGB{122, 122, 122},
+		lighter: RGB{148, 148, 148},
+		factor:  0.20,
+	},
+	{
+		old:     RGB{240, 240, 240},
+		lighter: RGB{243, 243, 243},
+		factor:  0.20,
+	},
+	{
+		old:     RGB{0, 0, 0},
+		lighter: RGB{51, 51, 51},
+		factor:  0.20,
+	},
+}
 
 func TestRgbToHex(t *testing.T) {
 	assert := assert.New(t)
@@ -83,4 +104,11 @@ func TestNewRGB(t *testing.T) {
 	assert.Equal(r1.r, 255)
 	r2 := NewRGB(255, 255, 0)
 	assert.Equal(r2.b, 0)
+}
+func TestLighten(t *testing.T) {
+	assert := assert.New(t)
+	for _, i := range lightendedColors {
+		actual := i.old.Lighten(i.factor)
+		assert.Equal(actual, i.lighter)
+	}
 }
