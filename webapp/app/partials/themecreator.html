@@ -1,0 +1,18 @@
+<header>
+  <h2>Emacs Theme Creator</h2>
+</header>
+<div class="form-control">
+<!-- <button class="bgbutton" value="Light" ng-click="setbglight()">Light</button> -->
+<!-- <button class="bgbutton" value="Dark" ng-click="setbgdark()">Dark</button> -->
+</div>
+<div class="cpick" ng-controller="Cpick">
+  <div class="colors">
+  <label for="bg1">Background Color</label>
+  <input colorpicker name="bg1" type="text" ng-model="deffacebg" /><span class="colorpreview" style="background-color:{{deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="fg1">Foreground Color</label>
+    <input colorpicker name="fg1" type="text" ng-model="deffacefg" /><span class="colorpreview" style="background-color:{{deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <button class="bgbutton" ng-click="setbg(deffacebg)">Apply</button>
+</div>
