@@ -11,7 +11,7 @@ angular.module('myApp', [
     'colorpicker.module',
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'Cpick'});
+  $routeProvider.when('/themecreator', {templateUrl: 'partials/themecreator.html', controller: 'Cpick'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'Cpick'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/themecreator'});
 }]);
