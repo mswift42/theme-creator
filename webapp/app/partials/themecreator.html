@@ -38,6 +38,18 @@
     <label for="variablef">Variable Face Color</label>
     <input colorpicker name="variablef" type="text" ng-model="variableface" /><span class="colorpreview" style="background-color:{{variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
+    <div class="colors">
+    <label for="typef">Type Face</label>
+    <input colorpicker name="typef" type="text" ng-model="typeface" /><span class="colorpreview" style="background-color:{{typeface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    </div>
+    <div class="colors">
+    <label for="constf">Constant Face</label>
+    <input colorpicker name="constf" type="text" ng-model="constantface" /><span class="colorpreview" style="background-color:{{constantface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    </div>
+    <div class="colors">
+    <label for="warnf">Warning Face</label>
+    <input colorpicker name="warnf" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
   <button class="bgbutton" ng-click="setbg(deffacebg)">Apply</button>
   <div class="lbox">
     <select ng-model="prevlang" ng-options="language for language in languages">
