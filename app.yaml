@@ -8,6 +8,9 @@ handlers:
   static_files: webapp/app/index.html
   upload: webapp/app/(.*\.html)
 
+- url: /bower_components
+  static_dir: webapp/app/bower_components
+
 - url: /css
   static_dir: webapp/app/css
 
