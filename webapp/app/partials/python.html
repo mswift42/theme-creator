@@ -6,6 +6,11 @@
 
 <span ng-style="{color:keywordface}">def </span><span ng-style="{color: functionnameface}">sumDigits</span><span ng-style="{color: deffacefg}">(num):
   <span ng-style="{color:stringface}">"return sum of all digits in number num"</span>
-  <span ng-style="{color:variableface}">s </span><span ng-style="{color:builtinface}">str</span><span ng-style="{color: deffacefg}">(num) </span><span ng-style="{color:commentface}"># convert number to string of its digits.</span>
+  <span ng-style="{color:variableface}">s </span><span ng-style="{color: deffacefg}">= </span><span ng-style="{color:builtinface}">str</span><span ng-style="{color: deffacefg}">(num) </span><span ng-style="{color:commentface}"># convert number to string of its digits.</span>
   <span ng-style="{color:variableface}">total </span><span ng-style="{color: deffacefg}">= 0</span>
+  <span ng-style="{color:keywordface}">for </span><span ng-style="{color: deffacefg}">i </span><span ng-style="{color:keywordface}">in </span><span ng-style="{color: deffacefg}">s:</span>
+      <span ng-style="{color:variableface}">total </span><span ng-style="{color: deffacefg}">+= </span><span ng-style="{color: builtinface}">int</span><span ng-style="{color: deffacefg}">(i)</span><span ng-style="{color: commentface}"> # add int value of each digit to total.</span>
+  <span ng-style="{color:keywordface}">return </span><span ng-style="{color:deffacefg}">total</span>
+
+<span ng-style="{color:keywordface}">print</span><span ng-style="{color: deffacefg}">(sumDigits(fac(100)))</span>
 </code></pre>
