@@ -14,5 +14,34 @@
     <label for="fg1">Foreground Color</label>
     <input colorpicker name="fg1" type="text" ng-model="deffacefg" /><span class="colorpreview" style="background-color:{{deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
+  <div class="colors">
+    <label for="builtin">Builtin Face</label>
+    <input colorpicker name="builtin" type="text" ng-model="builtinface" /><span class="colorpreview" style="background-color:{{builtinface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="stringf">String Face</label>
+    <input colorpicker name="stringf" type="text" ng-model="stringface" /><span class="colorpreview" style="background-color:{{stringface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="keywordf">Keyword Face Color</label>
+    <input colorpicker name="keywordf" type="text" ng-model="keywordface" /><span class="colorpreview" style="background-color:{{keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="functionf">Functionname Color</label>
+    <input colorpicker name="functionf" type="text" ng-model="functionnameface" /><span class="colorpreview" style="background-color:{{functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="commentf">Comment Color</label>
+    <input colorpicker name="commentf" type="text" ng-model="commentface" /><span class="colorpreview" style="background-color:{{commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
+  <div class="colors">
+    <label for="variablef">Variable Face Color</label>
+    <input colorpicker name="variablef" type="text" ng-model="variableface" /><span class="colorpreview" style="background-color:{{variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+  </div>
   <button class="bgbutton" ng-click="setbg(deffacebg)">Apply</button>
+  <div class="lbox">
+    <select ng-model="prevlang" ng-options="language for language in languages">
+    </select>
+  </div>
+  <div theme-preview></div>
 </div>
