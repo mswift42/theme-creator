@@ -10,6 +10,20 @@ type RGB struct {
 	r, g, b int
 }
 
+type Theme struct {
+	deffacefg        string
+	deffacebg        string
+	keywordface      string
+	builtinface      string
+	constantface     string
+	commentface      string
+	functionnameface string
+	stringface       string
+	typeface         string
+	variableface     string
+	warningface      string
+}
+
 // NewRGB - Constructor for RGB struct.
 // takes 3 uint for red, green and blue and
 // returns a new RGB struct
