@@ -9,59 +9,65 @@
 </div>
 <br/>
 <br/>
+<!-- <form action="/savetheme" method="post"> -->
+
 <div class="form-control">
 <!-- <button class="bgbutton" value="Light" ng-click="setbglight()">Light</button> -->
 <!-- <button class="bgbutton" value="Dark" ng-click="setbgdark()">Dark</button> -->
-</div>
+
 <div class="cpick" ng-controller="Cpick">
   <div class="colors">
-  <label for="bg1">Background Color</label>
-  <input colorpicker name="bg1" type="text" ng-model="deffacebg" /><span class="colorpreview" style="background-color:{{deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="deffacebg">Background Color</label>
+    <input colorpicker name="deffacebg" type="text" ng-model="deffacebg" /><span class="colorpreview" style="background-color:{{deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="fg1">Foreground Color</label>
-    <input colorpicker name="fg1" type="text" ng-model="deffacefg" /><span class="colorpreview" style="background-color:{{deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="deffacefg">Foreground Color</label>
+    <input colorpicker name="deffacefg" type="text" ng-model="deffacefg" /><span class="colorpreview" style="background-color:{{deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="builtin">Builtin Face</label>
-    <input colorpicker name="builtin" type="text" ng-model="builtinface" /><span class="colorpreview" style="background-color:{{builtinface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="builtinface">Builtin Face</label>
+    <input colorpicker name="builtinface" type="text" ng-model="builtinface" /><span class="colorpreview" style="background-color:{{builtinface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="stringf">String Face</label>
-    <input colorpicker name="stringf" type="text" ng-model="stringface" /><span class="colorpreview" style="background-color:{{stringface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="stringface">String Face</label>
+    <input colorpicker name="stringface" type="text" ng-model="stringface" /><span class="colorpreview" style="background-color:{{stringface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="keywordf">Keyword Face Color</label>
-    <input colorpicker name="keywordf" type="text" ng-model="keywordface" /><span class="colorpreview" style="background-color:{{keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="keywordface">Keyword Face Color</label>
+    <input colorpicker name="keywordface" type="text" ng-model="keywordface" /><span class="colorpreview" style="background-color:{{keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="functionf">Functionname Color</label>
-    <input colorpicker name="functionf" type="text" ng-model="functionnameface" /><span class="colorpreview" style="background-color:{{functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="functionface">Functionname Color</label>
+    <input colorpicker name="functionface" type="text" ng-model="functionnameface" /><span class="colorpreview" style="background-color:{{functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="commentf">Comment Color</label>
-    <input colorpicker name="commentf" type="text" ng-model="commentface" /><span class="colorpreview" style="background-color:{{commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="commentface">Comment Color</label>
+    <input colorpicker name="commentface" type="text" ng-model="commentface" /><span class="colorpreview" style="background-color:{{commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="variablef">Variable Face Color</label>
-    <input colorpicker name="variablef" type="text" ng-model="variableface" /><span class="colorpreview" style="background-color:{{variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="variableface">Variable Face Color</label>
+    <input colorpicker name="variableface" type="text" ng-model="variableface" /><span class="colorpreview" style="background-color:{{variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
     <div class="colors">
-    <label for="typef">Type Face</label>
-    <input colorpicker name="typef" type="text" ng-model="typeface" /><span class="colorpreview" style="background-color:{{typeface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="typeface">Type Face</label>
+    <input colorpicker name="typeface" type="text" ng-model="typeface" /><span class="colorpreview" style="background-color:{{typeface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
     </div>
     <div class="colors">
-    <label for="constf">Constant Face</label>
-    <input colorpicker name="constf" type="text" ng-model="constantface" /><span class="colorpreview" style="background-color:{{constantface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="constantface">Constant Face</label>
+    <input colorpicker name="constantface" type="text" ng-model="constantface" /><span class="colorpreview" style="background-color:{{constantface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
     </div>
     <div class="colors">
-    <label for="warnf">Warning Face</label>
-    <input colorpicker name="warnf" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="warningface">Warning Face</label>
+    <input colorpicker name="warningface" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
-  <button class="bgbutton" ng-click="setbg(deffacebg)">Apply</button>
+    <input name="sb"  type="submit" value="Submit"/>
+    <button ng-click="saveTheme()">Save</button>
+    <!-- </form> -->
   <div class="lbox">
     <select ng-model="prevlang" ng-options="language for language in languages">
     </select>
   </div>
+
   <div theme-preview></div>
+</div>
 </div>
