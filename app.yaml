@@ -10,7 +10,8 @@ handlers:
 
 - url: /bower_components
   static_dir: webapp/app/bower_components
-
+- url: /static
+  static_dir: static/
 - url: /css
   static_dir: webapp/app/css
 
