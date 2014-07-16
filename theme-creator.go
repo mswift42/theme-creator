@@ -1,11 +1,14 @@
 package emacsthemecreator
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	htemplate "html/template"
 	"io"
 	"net/http"
 	"strconv"
+	"text/template"
 )
 
 const test = `'((mainbg . {{.bg1}}) (mainfg . {{ .fg1}}))`
@@ -92,13 +95,13 @@ func init() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/savetheme", saveThemeHandler)
 }
-func selectedColors(r *http.Request) map[string]string {
-	facemap := make(map[string]string)
+func selectedColors(r *http.Request) map[string]interface{} {
+	facemap := make(map[string]interface{})
 	faces := []string{"deffacebg", "deffacefg", "builtinface", "stringface",
 		"keywordface", "functionnameface", "commentface", "variableface",
 		"typeface", "constantface", "warningface"}
 	for _, i := range faces {
-		facemap[i] = r.FormValue(i)
+		facemap[i] = "\"" + r.FormValue(i) + "\""
 	}
 	facemap["themename"] = r.FormValue("themename")
 	return facemap
@@ -106,11 +109,17 @@ func selectedColors(r *http.Request) map[string]string {
 func saveThemeHandler(w http.ResponseWriter, r *http.Request) {
 
 	fmap := selectedColors(r)
-	fmt.Fprintf(w, fmap["warningface"])
-	// themefile := template.Must(template.New("theme").ParseFiles("themetemplate.txt"))
-	// if err := themefile.Execute(w, fmap); err != nil {
-	// 	http.Error(w, err.Error(), http.StatusInternalServerError)
-	// }
+	var res bytes.Buffer
+	themefile := template.Must(template.New("theme").ParseFiles("static/themetemplate.txt"))
+	if err := themefile.ExecuteTemplate(&res, "theme", fmap); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	str := res.String()
+	webview := htemplate.Must(htemplate.New("_displaytheme").ParseFiles("static/displaytheme.html"))
+	if err := webview.ExecuteTemplate(w, "_displaytheme", map[string]interface{}{"emacstheme": str}); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 
 }
 
