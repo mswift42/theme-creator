@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"strconv"
 	"text/template"
+
+	"github.com/lucasb-eyer/go-colorful"
 )
 
 const test = `'((mainbg . {{.bg1}}) (mainfg . {{ .fg1}}))`
@@ -95,17 +97,37 @@ func init() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/savetheme", saveThemeHandler)
 }
-func selectedColors(r *http.Request) map[string]interface{} {
-	facemap := make(map[string]interface{})
+func selectedColors(r *http.Request) map[string]string {
+	facemap := make(map[string]string)
 	faces := []string{"deffacebg", "deffacefg", "builtinface", "stringface",
 		"keywordface", "functionnameface", "commentface", "variableface",
 		"typeface", "constantface", "warningface"}
 	for _, i := range faces {
-		facemap[i] = "\"" + r.FormValue(i) + "\""
+		facemap[i] = r.FormValue(i)
+	}
+	facemap = addColors(facemap)
+	for key, value := range facemap {
+		facemap[key] = "\"" + value + "\""
 	}
 	facemap["themename"] = r.FormValue("themename")
 	return facemap
 }
+func addColors(colors map[string]string) map[string]string {
+	fg := colors["deffacefg"]
+	bg := colors["deffacebg"]
+	fgcol, _ := colorful.Hex(fg)
+	bgcol, _ := colorful.Hex(bg)
+	bl, _ := colorful.Hex("#000000")
+	darkerfg1 := fgcol.BlendLab(bl, 0.1)
+	bg2 := bgcol.BlendLab(bl, 0.05).Hex()
+	bg3 := bgcol.BlendLab(bl, 0.1).Hex()
+	hex := darkerfg1.Hex()
+	colors["fore2"] = hex
+	colors["back2"] = bg2
+	colors["back3"] = bg3
+	return colors
+}
+
 func saveThemeHandler(w http.ResponseWriter, r *http.Request) {
 
 	fmap := selectedColors(r)
