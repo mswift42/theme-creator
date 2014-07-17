@@ -1,0 +1,17 @@
+<pre><code><span ng-style="{color: commentface}">-- return the sorted permutations of a string</span>
+
+<span ng-style="{color: keywordface}">import </span><span ng-style="{color: typeface}">System.Environment</span>
+<span ng-style="{color: keywordface}">import </span><span ng-style="{color: typeface}">System.Exit</span>
+<span ng-style="{color: keywordface}">import </span><span ng-style="{color: typeface}">Data.List </span><span ng-style="{color: deffacefg}">(permutations,sort,intercalate)</span>
+
+<span ng-style="{color: functionnameface}">main </span><span ng-style="{color: variableface}">= </span><span ng-style="{color: deffacefg}">getArgs </span><span ng-style="{color:variableface}">>>= </span><span ng-style="{color: deffacefg}">parse </span><span ng-style="{color: variableface}">>>= </span><span ng-style="{color: deffacefg}">putStrLn . process</span>
+
+<span ng-style="{color: functionnameface}">parse </span><span ng-style="{color: typeface}">[] </span><span ng-style="{color: variableface}">= </span><span ng-style="{color: deffacefg}">usage </span><span ng-style="{color:variableface}">>> </span><span ng-style="{color:deffacefg}">exit</span>
+<span ng-style="{color: functionnameface}">parse [f] </span><span ng-style="{color:variableface}">= </span><span ng-style="{color:deffacefg}">readFile f</span>
+
+<span ng-style="{color: functionnameface}">process </span><span ng-style="{color:variableface}">= </span><span ng-style="{color:deffacefg}">unlines </span><span ng-style="{color:variableface}">. </span><span ng-style="{color: deffacefg}">permute </span><span ng-style="{color:variableface}">. </span><span ng-style="{color:deffacefg}">lines</span>
+
+<span ng-style="{color: functionnameface}">usage    </span><span ng-style="{color: variableface}">= </span><span ng-style="{color: deffacefg}">putStrLn </span><span ng-style="{color: stringface}">"Usage: foo <file>"</span>
+<span ng-style="{color: functionnameface}">exit     </span><span ng-style="{color: variableface}">= </span><span ng-style="{color:deffacefg}">exitSuccess</span>
+
+<span ng-style="{color: functionnameface}">permute </span><span ng-style="{color:variableface}">= </span><span ng-style="{color: deffacefg}">map (intercalate </span><span ng-style="{color: stringface}">"," </span><span ng-style="{color: variableface}">. </span><span ng-style="{color: deffacefg}">sort </span><span ng-style="{color: variableface}">. </span><span ng-style="{color:deffacefg}">permutations)</span></code></pre>
