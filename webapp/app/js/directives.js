@@ -26,4 +26,16 @@ angular.module('myApp.directives', []).
             restrict: 'EA',
             templateUrl: 'partials/ruby.html'
         };
+    }).
+    directive('haskellView',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/haskell.html'
+        };
+    }).
+    directive('jsView',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/js.html'
+        };
     });
