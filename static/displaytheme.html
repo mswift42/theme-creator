@@ -14,9 +14,26 @@
     <header>
       <h2>Theme File</h2>
     </header>
-    <div class="thprev">
+    <div class="highlightbutton">
+      <button onclick="selectText('thprev')">Select Theme</button>
+    </div>
+    <div class="thprev" id="thprev">
       <pre><code>{{.emacstheme}}</code></pre>
     </div>
+
+    <script type="text/javascript">
+    function selectText(containerid) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+        }
+    }
+</script>
   </body>
 <html>
 {{end}}
