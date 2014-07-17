@@ -22,8 +22,23 @@
 
 ;; This file is not part of Emacs.
 
-`(deftheme {{.themename}})
+(deftheme {{.themename}})
 (custom-theme-set-faces
+ (let ((fg1 deffacefg)
+       (fg2 fore2)
+       (fg3 fore3)
+       (bg1 deffacebg)
+       (bg2 back2)
+       (bg3 back3)
+       (builtin builtinface)
+       (keyword keywordface)
+       (const   constantface)
+       (comment commentface)
+       (func    functionnameface)
+       (str     stringface)
+       (type    typeface)
+       (var     variableface)
+       (warning  warningface)))
   '{{.themename}}
         '(default ((t (:background {{.deffacebg}} :foreground {{.deffacefg}}))))
         '(font-lock-builtin-face ((t (:foreground {{.builtinface }}))))
