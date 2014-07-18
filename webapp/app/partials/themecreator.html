@@ -1,6 +1,13 @@
 <header>
   <h2>Emacs Theme Creator</h2>
 </header>
+
+
+<form action="/savetheme" method="post">
+
+<div class="form-control">
+<!-- <button class="bgbutton" value="Light" ng-click="setbglight()">Light</button> -->
+<!-- <button class="bgbutton" value="Dark" ng-click="setbgdark()">Dark</button> -->
 <div class="themenameselector">
   <div class="sbutton">
     <label for="themename">Theme name</label>
@@ -9,12 +16,6 @@
 </div>
 <br/>
 <br/>
-<!-- <form action="/savetheme" method="post"> -->
-
-<div class="form-control">
-<!-- <button class="bgbutton" value="Light" ng-click="setbglight()">Light</button> -->
-<!-- <button class="bgbutton" value="Dark" ng-click="setbgdark()">Dark</button> -->
-
 <div class="cpick" ng-controller="Cpick">
   <div class="colors">
     <label for="deffacebg">Background Color</label>
@@ -37,8 +38,8 @@
     <input colorpicker name="keywordface" type="text" ng-model="keywordface" /><span class="colorpreview" style="background-color:{{keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
-    <label for="functionface">Functionname Color</label>
-    <input colorpicker name="functionface" type="text" ng-model="functionnameface" /><span class="colorpreview" style="background-color:{{functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    <label for="functionnameface">Functionname Color</label>
+    <input colorpicker name="functionnameface" type="text" ng-model="functionnameface" /><span class="colorpreview" style="background-color:{{functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
   </div>
   <div class="colors">
     <label for="commentface">Comment Color</label>
@@ -62,7 +63,7 @@
   </div>
     <input name="sb"  type="submit" value="Submit"/>
     <button ng-click="saveTheme()">Save</button>
-    <!-- </form> -->
+    </form>
   <div class="lbox">
     <select ng-model="prevlang" ng-options="language for language in languages">
     </select>
