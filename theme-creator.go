@@ -43,26 +43,33 @@ func addColors(colors map[string]string) map[string]string {
 	bg := colors["deffacebg"]
 	bg2 := ""
 	bg3 := ""
+	bg4 := ""
 	fg2 := ""
 	fg3 := ""
+	fg4 := ""
 	fgcol, _ := colorful.Hex(fg)
 	bgcol, _ := colorful.Hex(bg)
 	if hasDarkBg(&bgcol) {
 		fg2 = darken(fgcol, 0.05)
 		fg3 = darken(fgcol, 0.1)
+		fg4 = darken(fgcol, 0.15)
 		bg2 = lighten(bgcol, 0.05)
 		bg3 = lighten(bgcol, 0.1)
-
+		bg4 = lighten(bgcol, 0.15)
 	} else {
 		fg2 = lighten(fgcol, 0.05)
 		fg3 = lighten(fgcol, 0.1)
+		fg4 = lighten(fgcol, 0.15)
 		bg2 = darken(bgcol, 0.05)
 		bg3 = darken(bgcol, 0.1)
+		bg4 = darken(bgcol, 0.15)
 	}
 	colors["fore2"] = fg2
 	colors["fore3"] = fg3
+	colors["fore4"] = fg4
 	colors["back2"] = bg2
 	colors["back3"] = bg3
+	colors["back4"] = bg4
 	return colors
 }
 
