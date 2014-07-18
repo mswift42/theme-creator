@@ -5,7 +5,7 @@
 ;; Version: 0.2
 ;; Package-Requires: ((emacs "24"))
 ;; Emacs theme with a light background.
-;; Copyright (C) 2013 , Martin Haesler
+;; Copyright (C) 2014 , {{.author}}
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -66,22 +66,21 @@
         `(mode-line-inactive ((t (:box (:line-width 1 :color nil :style pressed-button) :foreground ,bg4 :background ,fg4))))
         `(mode-line-buffer-id ((t (:bold t :foreground ,fg2 :background nil))))
 	`(mode-line-highlight ((t (:background ,bg4))))
-	'(vertical-border ((t (:foreground "#232323"))))
-        '(minibuffer-prompt ((t (:bold t :foreground "#121212"))))
-        '(default-italic ((t (:italic t))))
-
-	'(link ((t (:foreground "#f03f3f" :underline t))))
-	'(org-code ((t (:foreground "#191919"))))
-	'(org-hide ((t (:foreground "#686868"))))
-        '(org-level-1 ((t (:bold t :foreground "#121212" :height 1.1))))
-        '(org-level-2 ((t (:bold nil :foreground "#232323"))))
-        '(org-level-3 ((t (:bold t :foreground "#393939"))))
-        '(org-level-4 ((t (:bold nil :foreground "#af4f4b"))))
-        '(org-date ((t (:underline t :foreground "#4b004d") )))
-        '(org-footnote  ((t (:underline t :foreground "#525150"))))
-        '(org-link ((t (:underline t :foreground "#00025c" ))))
-        '(org-special-keyword ((t (:foreground "#45511a"))))
-        '(org-verbatim ((t (:foreground "#eeeeec" :underline t :slant italic))))
+	`(vertical-border ((t (:foreground ,fg3))))
+        `(minibuffer-prompt ((t (:bold t :foreground ,keyword))))
+        `(default-italic ((t (:italic t))))
+	`(link ((t (:foreground ,const :underline t))))
+	`(org-code ((t (:foreground ,fg2))))
+	`(org-hide ((t (:foreground ,fg4))))
+        `(org-level-1 ((t (:bold t :foreground ,fg2 :height 1.1))))
+        `(org-level-2 ((t (:bold nil :foreground ,fg3))))
+        `(org-level-3 ((t (:bold t :foreground ,fg4))))
+        `(org-level-4 ((t (:bold nil :foreground ,bg4))))
+        `(org-date ((t (:underline t :foreground ,var) )))
+        `(org-footnote  ((t (:underline t :foreground ,fg4))))
+        `(org-link ((t (:underline t :foreground ,type ))))
+        `(org-special-keyword ((t (:foreground ,func))))
+        `(org-verbatim ((t (:foreground "#eeeeec" :underline t :slant italic))))
         '(org-block ((t (:foreground "#323232"))))
         '(org-quote ((t (:inherit org-block :slant italic))))
         '(org-verse ((t (:inherit org-block :slant italic))))
