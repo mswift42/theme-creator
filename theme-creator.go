@@ -47,19 +47,17 @@ func addColors(colors map[string]string) map[string]string {
 	fg3 := ""
 	fgcol, _ := colorful.Hex(fg)
 	bgcol, _ := colorful.Hex(bg)
-	bl, _ := colorful.Hex("#000000")
-	wh, _ := colorful.Hex("#ffffff")
 	if hasDarkBg(&bgcol) {
-		fg2 = fgcol.BlendLab(wh, 0.05).Hex()
-		fg3 = fgcol.BlendLab(wh, 0.1).Hex()
-		bg2 = bgcol.BlendLab(wh, 0.05).Hex()
-		bg3 = bgcol.BlendLab(wh, 0.1).Hex()
+		fg2 = darken(fgcol, 0.05)
+		fg3 = darken(fgcol, 0.1)
+		bg2 = lighten(bgcol, 0.05)
+		bg3 = lighten(bgcol, 0.1)
 
 	} else {
-		fg2 = fgcol.BlendLab(bl, 0.05).Hex()
-		fg3 = fgcol.BlendLab(bl, 0.1).Hex()
-		bg2 = bgcol.BlendLab(bl, 0.05).Hex()
-		bg3 = bgcol.BlendLab(bl, 0.1).Hex()
+		fg2 = lighten(fgcol, 0.05)
+		fg3 = lighten(fgcol, 0.1)
+		bg2 = darken(bgcol, 0.05)
+		bg3 = darken(bgcol, 0.1)
 	}
 	colors["fore2"] = fg2
 	colors["fore3"] = fg3
