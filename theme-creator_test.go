@@ -3,6 +3,7 @@ package emacsthemecreator
 import (
 	"testing"
 
+	"github.com/lucasb-eyer/go-colorful"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -138,4 +139,25 @@ func TestDarken(t *testing.T) {
 		actual := i.old.Darken(i.factor)
 		assert.Equal(actual, i.darker)
 	}
+}
+
+func TestAddColors(t *testing.T) {
+	assert := assert.New(t)
+	cmap := map[string]string{"deffacefg": "#000000", "deffacebg": "e2dfd9"}
+	add := addColors(cmap)
+	assert.Equal("#c9c6c1", add["fore2"])
+	assert.Equal("#fefefe", add["back2"])
+
+}
+
+func TestHasDarkBg(t *testing.T) {
+	assert := assert.New(t)
+	col, _ := colorful.Hex("#000000")
+	col1, _ := colorful.Hex("#002b36")
+	col2, _ := colorful.Hex("#586e75")
+	col3, _ := colorful.Hex("#fdf6e3")
+	assert.True(hasDarkBg(&col))
+	assert.True(hasDarkBg(&col1))
+	assert.True(hasDarkBg(&col2))
+	assert.False(hasDarkBg(&col3))
 }

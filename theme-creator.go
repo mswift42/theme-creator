@@ -127,6 +127,10 @@ func addColors(colors map[string]string) map[string]string {
 	colors["back3"] = bg3
 	return colors
 }
+func hasDarkBg(c *colorful.Color) bool {
+	l, _, _ := c.Lab()
+	return l < 0.5
+}
 
 func saveThemeHandler(w http.ResponseWriter, r *http.Request) {
 
