@@ -1,7 +1,7 @@
 {{define "theme"}}
-;;; soft-stone-theme.el --- Emacs 24 theme with a light background.
-;; Author: Martin Haesler
-;; URL: http://github.com/mswift42/soft-stone-theme
+;;; {{.themename}}-theme.el --- Emacs 24 theme with a light background.
+;; {{.author}}
+;; {{.url}}
 ;; Version: 0.2
 ;; Package-Requires: ((emacs "24"))
 ;; Emacs theme with a light background.
