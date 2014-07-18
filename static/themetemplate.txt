@@ -23,7 +23,6 @@
 ;; This file is not part of Emacs.
 
 (deftheme {{.themename}})
-(custom-theme-set-faces
  (let ((fg1 {{.deffacefg}})
        (fg2 {{.fore2}})
        (fg3 {{.fore3}})
@@ -41,6 +40,7 @@
        (type    {{.typeface}})
        (var     {{.variableface}})
        (warning {{.warningface}}))
+   (custom-theme-set-faces
    '{{.themename}})
         `(default ((t (:background ,bg1 :foreground ,fg1))))
         `(font-lock-builtin-face ((t (:foreground ,builtin))))
@@ -54,7 +54,7 @@
         `(font-lock-string-face ((t (:foreground ,str))))
         `(font-lock-type-face ((t (:foreground ,type }}))))
         `(font-lock-variable-name-face ((t (:foreground ,var))))
-        `(font-lock-warning-face ((t (:foreground ,warning :background ,bg))))
+        `(font-lock-warning-face ((t (:foreground ,warning :background ,bg2))))
         `(region ((t (:background ,fg3 :foreground ,bg2))))
         `(highlight ((t (:foreground ,fg3 :background ,bg3))))
 	`(hl-line ((t (:background  ,bg2))))
@@ -114,13 +114,13 @@
 	`(mu4e-header-marks-face ((t (:foreground ,type))))
 	`(ffap ((t (:foreground ,fg4))))
 	`(js2-private-function-call ((t (:foreground ,const))))
-	`(js2-jsdoc-html-tag-delimiter ((t (:foreground ,string))))
+	`(js2-jsdoc-html-tag-delimiter ((t (:foreground ,str))))
 	`(js2-jsdoc-html-tag-name ((t (:foreground ,type))))
 	`(js2-external-variable ((t (:foreground ,const  ))))
 	`(warning ((t (:foreground ,warning))))
 	`(ac-completion-face ((t (:underline t :foreground ,keyword))))
 	`(info-quoted-name ((t (:foreground ,builtin))))
-	`(info-string ((t (:foreground ,string))))
+	`(info-string ((t (:foreground ,str))))
 	`(icompletep-determined ((t :foreground ,builtin)))
         `(undo-tree-visualizer-register-face ((t :foreground ,keyword)))
         `(undo-tree-visualizer-default-face ((t :foreground ,fg2)))
