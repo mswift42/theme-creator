@@ -7,6 +7,8 @@
 ;; Emacs theme with a light background.
 ;; Copyright (C) 2014 , {{.author}}
 
+;;; Commentary:
+
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
@@ -21,6 +23,8 @@
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ;; This file is not part of Emacs.
+
+;;; Code:
 
 (deftheme {{.themename}})
  (let ((fg1 {{.deffacefg}})
@@ -41,7 +45,7 @@
        (var     {{.variableface}})
        (warning {{.warningface}}))
    (custom-theme-set-faces
-   '{{.themename}})
+   '{{.themename}}
         `(default ((t (:background ,bg1 :foreground ,fg1))))
         `(font-lock-builtin-face ((t (:foreground ,builtin))))
         `(font-lock-comment-face ((t (:foreground ,comment))))
@@ -136,7 +140,7 @@
         `(rainbow-delimiters-depth-6-face ((t :foreground ,fg1)))
         `(rainbow-delimiters-depth-7-face ((t :foreground ,type)))
         `(rainbow-delimiters-depth-8-face ((t :foreground ,var)))
-        `(rainbow-delimiters-unmatched-face ((t :foreground ,warning))))
+        `(rainbow-delimiters-unmatched-face ((t :foreground ,warning)))))
 
 ;;;###autoload
 (when load-file-name
@@ -145,5 +149,9 @@
 
 (provide-theme '{{.themename}})
 
-;;; {{.themename}}.el ends here`
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+
+;;; {{.themename}}-theme.el ends here
 {{end}}
