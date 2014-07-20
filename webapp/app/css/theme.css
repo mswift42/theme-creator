@@ -1,0 +1,10 @@
+pre {
+     word-wrap: break-word;
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+pre, code {
+    font-family: 'Ubuntu Mono', monospace;
+}

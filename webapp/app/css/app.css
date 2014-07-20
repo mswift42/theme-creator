@@ -1,0 +1,131 @@
+/* app css stylesheet */
+body {
+    /* background-image:url("/static/bg1.png"); */
+    background-color:#e7e9eb;
+
+}
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+    content: "";
+    padding: 0;
+}
+.colorpreview {
+    padding: 0.1em;
+    margin-left:0.2em;
+}
+input {
+    margin-left:0.2em;
+}
+
+.colors {
+    padding:1em;
+    margin:auto;
+}
+[class*='col-'] {
+    float: left;
+}
+.col-2-3 {
+    width: 66.66%;
+}
+.col-1-3 {
+    width: 33.33%;
+}
+.lang {
+    width: 50%;
+    float:right;
+    margin: auto;
+    background-color: white;
+    border-left: .2em solid #b9bcbf;
+    border-right: .2em solid #b9bcbf;
+    -moz-box-shadow: 0 0 10px 10px #b9bcbf;
+    -webkit-box-shadow: 0 0 10px 10px #b9bcbf;
+    -icab-box-shadow: 0 0 10px 10px #b9bcbf;
+    -o-box-shadow: 0 0 10px 10px #b9bcbf;
+    box-shadow: 0 0 10px 10px #b9bcbf;
+
+}
+.sellang {
+    padding:22px;
+    height:4px;
+}
+.themecreator {
+    width:100%;
+    margin:auto;
+}
+.themeprev {
+    width:97%;
+    float:right;
+    padding:8px;
+    clear:right;
+
+}
+header {
+    text-align:center;
+}
+.colors > input {
+    width:80px;
+    box-align:end;
+    -webkit-box-align:end;
+
+}
+
+
+.form-control {
+    width:40%;
+    padding:4px;
+    margin-left:4px;
+    float:left;
+    background-color:#ffffff;
+    margin: auto;
+    background-color: white;
+    border-left: .2em solid #b9bcbf;
+    border-right: .2em solid #b9bcbf;
+    -moz-box-shadow: 0 0 10px 10px #b9bcbf;
+    -webkit-box-shadow: 0 0 10px 10px #b9bcbf;
+    -icab-box-shadow: 0 0 10px 10px #b9bcbf;
+    -o-box-shadow: 0 0 10px 10px #b9bcbf;
+    box-shadow: 0 0 10px 10px #b9bcbf;
+}
+
+
+/* .grid:after { */
+/*   content: ""; */
+/*   display: table; */
+/*   clear: both; */
+/* } */
+
+/* .themepreview { */
+/*     float:right; */
+/*     margin-right:8px; */
+/*     padding:8px; */
+/* } */
+/* .form-control { */
+/*     float:left; */
+/*     width:50%; */
+/*     margin-left:10px; */
+
+/* } */
