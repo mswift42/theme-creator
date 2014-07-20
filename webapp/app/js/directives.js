@@ -9,6 +9,13 @@ angular.module('myApp.directives', []).
       elm.text(version);
     };
   }]).
+    directive('themeCreator',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/themecreator.html',
+            controller: 'Cpick'
+        };
+    }).
     directive('themePreview',function() {
         return {
             restrict: 'EA',
