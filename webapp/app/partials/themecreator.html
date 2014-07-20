@@ -71,9 +71,11 @@
   </form>
   </div>
   </div>
-  <div class="lang">
-  <select ng-model="prevlang" ng-options="language for language in languages">
-  </select>
+  <div class="lang" ng-style="{'background-color':deffacebg}">
+    <div class="sellang">
+      <select ng-model="prevlang" ng-options="language for language in languages">
+      </select>
+    </div>
   <div theme-preview></div>
   </div>
 
