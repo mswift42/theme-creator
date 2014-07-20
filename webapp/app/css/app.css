@@ -134,6 +134,13 @@ header {
     margin-left:80px;
     margin-top:22px;
 }
+footer {
+    text-align:center;
+    position: fixed;
+    bottom:0;
+    left:30rem;
+    font-size:0.8em;
+}
 
 
 /* .grid:after { */
