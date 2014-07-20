@@ -62,81 +62,71 @@ var convertColors = []struct {
 	},
 }
 var lightendedColors = []struct {
-	old     RGB
-	lighter RGB
+	old     string
+	lighter string
 	factor  float64
 }{
 	{
-		old:     RGB{122, 122, 122},
-		lighter: RGB{148, 148, 148},
+		old:     "#000000",
+		lighter: "#303030",
 		factor:  0.20,
 	},
 	{
-		old:     RGB{240, 240, 240},
-		lighter: RGB{243, 243, 243},
+		old:     "#202020",
+		lighter: "#464646",
 		factor:  0.20,
 	},
 	{
-		old:     RGB{0, 0, 0},
-		lighter: RGB{51, 51, 51},
-		factor:  0.20,
+		old:     "#ffff40",
+		lighter: "#00ff4e",
+		factor:  0.05,
 	},
 }
 var darkenedColors = []struct {
-	old    RGB
-	darker RGB
+	old    string
+	darker string
 	factor float64
 }{
 	{
-		old:    RGB{100, 100, 100},
-		darker: RGB{80, 80, 80},
-		factor: 0.80,
+		old:    "#ffffff",
+		darker: "#e2e2e2",
+		factor: 0.1,
 	},
 	{
-		old:    RGB{255, 255, 255},
-		darker: RGB{204, 204, 204},
-		factor: 0.80,
+		old:    "#e1e1e1",
+		darker: "#d4d4d4",
+		factor: 0.05,
 	},
 	{
-		old:    RGB{0, 0, 0},
-		darker: RGB{0, 0, 0},
+		old:    "#808080",
+		darker: "#727272",
+		factor: 0.1,
+	},
+	{
+		old:    "#ff40ff",
+		darker: "#f13ef1",
+		factor: 0.05,
+	},
+	{
+		old:    "#b72fc1",
+		darker: "#ad2eb6",
+		factor: 0.05,
 	},
 }
 
-func TestRgbToHex(t *testing.T) {
-	assert := assert.New(t)
-	for _, test := range convertColors {
-		actual := rgbToHex(test.r, test.g, test.b)
-		assert.Equal(actual, test.hex)
-	}
-}
-
-func TestRGB(t *testing.T) {
-	assert := assert.New(t)
-	rgb1 := RGB{r: 255, g: 255, b: 255}
-	assert.Equal(rgb1.r, 255)
-	rgb2 := RGB{r: 0, g: 0, b: 0}
-	assert.Equal(rgb2.r, 0)
-}
-
-func TestNewRGB(t *testing.T) {
-	assert := assert.New(t)
-	r1 := NewRGB(255, 255, 255)
-	assert.Equal(r1.r, 255)
-	r2 := NewRGB(255, 255, 0)
-	assert.Equal(r2.b, 0)
-}
 func TestLighten(t *testing.T) {
 	assert := assert.New(t)
 	for _, i := range lightendedColors {
-		actual := i.old.Lighten(i.factor)
+		col, _ := colorful.Hex(i.old)
+		actual := lighten(col, i.factor)
 		assert.Equal(actual, i.lighter)
 	}
 }
 func TestDarken(t *testing.T) {
 	assert := assert.New(t)
 	for _, i := range darkenedColors {
-		actual := i.old.Darken(i.factor)
+		col, _ := colorful.Hex(i.old)
+		actual := darken(col, i.factor)
 		assert.Equal(actual, i.darker)
 	}
 }
@@ -145,8 +135,8 @@ func TestAddColors(t *testing.T) {
 	assert := assert.New(t)
 	cmap := map[string]string{"deffacefg": "#000000", "deffacebg": "e2dfd9"}
 	add := addColors(cmap)
-	assert.Equal("#c9c6c1", add["fore2"])
-	assert.Equal("#fefefe", add["back2"])
+	assert.Equal("#000000", add["fore2"])
+	assert.Equal("#181818", add["back2"])
 
 }
 
