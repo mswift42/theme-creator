@@ -36,11 +36,14 @@ func selectedColors(r *http.Request) map[string]string {
 		facemap[key] = "\"" + value + "\""
 	}
 	facemap["themename"] = r.FormValue("themename")
+	facemap["author"] = r.FormValue("author")
+	facemap["url"] = r.FormValue("url")
 	return facemap
 }
 func addColors(colors map[string]string) map[string]string {
 	fg := colors["deffacefg"]
 	bg := colors["deffacebg"]
+	keyword := colors["keyword"]
 	bg2 := ""
 	bg3 := ""
 	bg4 := ""
@@ -49,27 +52,32 @@ func addColors(colors map[string]string) map[string]string {
 	fg4 := ""
 	fgcol, _ := colorful.Hex(fg)
 	bgcol, _ := colorful.Hex(bg)
+	keycol, _ := colorful.Hex(keyword)
 	if hasDarkBg(&bgcol) {
-		fg2 = darken(fgcol, 0.05)
-		fg3 = darken(fgcol, 0.1)
-		fg4 = darken(fgcol, 0.15)
-		bg2 = lighten(bgcol, 0.05)
-		bg3 = lighten(bgcol, 0.1)
-		bg4 = lighten(bgcol, 0.15)
+		fg2 = darken(fgcol, 0.08)
+		fg3 = darken(fgcol, 0.16)
+		fg4 = darken(fgcol, 0.24)
+		bg2 = lighten(bgcol, 0.08)
+		bg3 = lighten(bgcol, 0.16)
+		bg4 = lighten(bgcol, 0.24)
 	} else {
-		fg2 = lighten(fgcol, 0.05)
-		fg3 = lighten(fgcol, 0.1)
-		fg4 = lighten(fgcol, 0.15)
-		bg2 = darken(bgcol, 0.05)
-		bg3 = darken(bgcol, 0.1)
-		bg4 = darken(bgcol, 0.15)
+		fg2 = lighten(fgcol, 0.08)
+		fg3 = lighten(fgcol, 0.16)
+		fg4 = lighten(fgcol, 0.24)
+		bg2 = darken(bgcol, 0.08)
+		bg3 = darken(bgcol, 0.16)
+		bg4 = darken(bgcol, 0.24)
 	}
+	key2 := lighten(keycol, 0.08)
+	key3 := darken(keycol, 0.08)
 	colors["fore2"] = fg2
 	colors["fore3"] = fg3
 	colors["fore4"] = fg4
 	colors["back2"] = bg2
 	colors["back3"] = bg3
 	colors["back4"] = bg4
+	colors["key2"] = key2
+	colors["key3"] = key3
 	return colors
 }
 
