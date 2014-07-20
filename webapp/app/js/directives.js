@@ -12,30 +12,35 @@ angular.module('myApp.directives', []).
     directive('themePreview',function() {
         return {
             restrict: 'EA',
-            templateUrl: 'partials/preview.html'
+            templateUrl: 'partials/preview.html',
+            controller: 'Cpick'
         };
     }).
     directive('pythonView',function() {
         return {
             restrict: 'EA',
-            templateUrl: 'partials/python.html'
+            templateUrl: 'partials/python.html',
+            controller: 'Cpick'
         };
     }).
     directive('rubyView',function() {
         return {
             restrict: 'EA',
-            templateUrl: 'partials/ruby.html'
+            templateUrl: 'partials/ruby.html',
+            controller: 'Cpick'
         };
     }).
     directive('haskellView',function() {
         return {
             restrict: 'EA',
-            templateUrl: 'partials/haskell.html'
+            templateUrl: 'partials/haskell.html',
+            controller: 'Cpick'
         };
     }).
     directive('jsView',function() {
         return {
             restrict: 'EA',
-            templateUrl: 'partials/js.html'
+            templateUrl: 'partials/js.html',
+            controller: 'Cpick'
         };
     });
