@@ -50,4 +50,11 @@ angular.module('myApp.directives', []).
             templateUrl: 'partials/js.html',
             controller: 'Cpick'
         };
+    }).
+    directive('goView',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/go.html',
+            controller: 'Cpick'
+        };
     });
