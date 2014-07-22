@@ -1,1 +1,8 @@
 /theme-creator.test
+/#handlers.go#
+/webapp/.bowerrc
+/webapp/.gitbackup/
+/webapp/.gitignorebackup
+/webapp/.jshintrc
+/webapp/.travis.yml
+/webapp/app/index-async.html
