@@ -19,7 +19,7 @@ Create an empty theme file in the new directory:
 
 It is highly recommended that you store this in some form of VCS.
 
-If your new theme is called `rainforest`, your theme file has be named `rainforest-theme.el`. This is important if you are planning to submit your theme to melpa.
+If your new theme is called `rainforest`, your theme file has to be named `rainforest-theme.el`. This is important if you are planning to submit your theme to melpa.
 
 Go to [emacs-theme-creator](http://emacs-theme-creator.appspot.com/).
 
@@ -82,6 +82,7 @@ TODO:
 -----
 
 Add more preview languages.
+Add support for more modes.
 
 
 Donate:
