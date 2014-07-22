@@ -10,19 +10,13 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 )
 
-const test = `'((mainbg . {{.bg1}}) (mainfg . {{ .fg1}}))`
-
-// func decodeTheme(r io.ReadCloser) (*Theme, error) {
-// 	defer r.Close()
-// 	var theme Theme
-// 	err := json.NewDecoder(r).Decode(&theme)
-// 	return &theme, err
-// }
-
 func init() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/savetheme", saveThemeHandler)
 }
+
+// selectedColors - takes an http.Request, and maps of its
+// submitted Form every face name to it's value.
 func selectedColors(r *http.Request) map[string]string {
 	facemap := make(map[string]string)
 	faces := []string{"deffacebg", "deffacefg", "builtinface", "stringface",
@@ -36,14 +30,18 @@ func selectedColors(r *http.Request) map[string]string {
 		facemap[key] = "\"" + value + "\""
 	}
 	facemap["themename"] = r.FormValue("themename")
-	facemap["author"] = r.FormValue("author")
+	facemap["author"] = r.FormValue("authorname")
 	facemap["url"] = r.FormValue("url")
 	return facemap
 }
+
+// addColors - takes a map of faces, and stores darker
+// and lighter variants of the main fg and bg face, as
+// well as a lighter and darker variant of the keyword face.
 func addColors(colors map[string]string) map[string]string {
 	fg := colors["deffacefg"]
 	bg := colors["deffacebg"]
-	keyword := colors["keyword"]
+	keyword := colors["keywordface"]
 	bg2 := ""
 	bg3 := ""
 	bg4 := ""
@@ -68,8 +66,8 @@ func addColors(colors map[string]string) map[string]string {
 		bg3 = darken(bgcol, 0.16)
 		bg4 = darken(bgcol, 0.24)
 	}
-	key2 := lighten(keycol, 0.08)
-	key3 := darken(keycol, 0.08)
+	key2 := lighten(keycol, 0.11)
+	key3 := darken(keycol, 0.11)
 	colors["fore2"] = fg2
 	colors["fore3"] = fg3
 	colors["fore4"] = fg4
@@ -81,11 +79,13 @@ func addColors(colors map[string]string) map[string]string {
 	return colors
 }
 
+// darken - return a darker variant of a supplied color.
 func darken(col colorful.Color, factor float64) string {
 	black, _ := colorful.Hex("#000000")
 	return col.BlendLab(black, factor).Hex()
 }
 
+// lighten - return a lighter variant of a supplied color.
 func lighten(col colorful.Color, factor float64) string {
 	white, _ := colorful.Hex("#ffffff")
 	return col.BlendLab(white, factor).Hex()
@@ -101,13 +101,13 @@ func saveThemeHandler(w http.ResponseWriter, r *http.Request) {
 
 	fmap := selectedColors(r)
 	var res bytes.Buffer
-	themefile := template.Must(template.New("theme").ParseFiles("static/themetemplate.txt"))
+	themefile := template.Must(template.New("theme").ParseFiles("themetemplate.txt"))
 	if err := themefile.ExecuteTemplate(&res, "theme", fmap); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
 	str := res.String()
-	webview := htemplate.Must(htemplate.New("_displaytheme").ParseFiles("static/displaytheme.html"))
+	webview := htemplate.Must(htemplate.New("_displaytheme").ParseFiles("displaytheme.html"))
 	if err := webview.ExecuteTemplate(w, "_displaytheme", map[string]interface{}{"emacstheme": str}); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
@@ -115,36 +115,9 @@ func saveThemeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleTheme(r *http.Request) (interface{}, error) {
-	// switch r.Method {
-	// case "POST":
-	// //	theme, err := decodeTheme(r.Body)
-	// 	if err != nil {
-	// 		return nil, err
-	// 	}
-	// 	fmt.Println(theme)
-
-	// case "GET":
-	// 	var theme Theme
-	// 	return theme, nil
-	// }
 
 	return nil, fmt.Errorf("method not implemented")
 }
 func handler(w http.ResponseWriter, r *http.Request) {
-	// val, err := handleTheme(r)
-	// if err == nil {
-	// 	fmt.Fprintf(w, "Success")
-	// 	fmt.Println(val)
-	// }
 	fmt.Fprintf(w, "success")
 }
-
-// func main() {
-// 	temp := template.Must(template.New("test").Parse(test))
-// 	temp.Execute(os.Stdout, map[string]interface{}{"bg1": "\"#000000\"",
-// 		"fg1": "\"#ffffff\""})
-// 	fmt.Println()
-// 	fmt.Println(rgbToHex(255, 255, 255))
-// 	fmt.Println(rgbToHex(0, 0, 0))
-// 	fmt.Println(122 * 120 / 100)
-// }
