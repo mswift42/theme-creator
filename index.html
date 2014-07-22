@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="emacs-theme-creator : create emacs 24 themes." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>emacs-theme-creator</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mswift42/theme-creator">View on GitHub</a>
+
+          <h1 id="project_title">emacs-theme-creator</h1>
+          <h2 id="project_tagline">create emacs 24 themes.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mswift42/theme-creator/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mswift42/theme-creator/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="emacs-theme-creator" class="anchor" href="#emacs-theme-creator"><span class="octicon octicon-link"></span></a>emacs-theme-creator</h1>
+
+<p>create emacs 24 themes.</p>
+
+<h2>
+<a name="installation-instructions" class="anchor" href="#installation-instructions"><span class="octicon octicon-link"></span></a>Installation Instructions:</h2>
+
+<p>No installation necessary. Emacs Theme Creator runs on Appengine, using Go and a bit of AngularJS.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h2>
+
+<p>Create a new directory for your theme to live in.</p>
+
+<p>Create an empty theme file in the new directory:</p>
+
+<pre><code>touch &lt;name of theme&gt;-theme.el
+</code></pre>
+
+<p>It is highly recommended that you store this in some form of VCS.</p>
+
+<p>If your new theme is called <code>rainforest</code>, your theme file has be named <code>rainforest-theme.el</code>. This is important if you are planning to submit your theme to melpa.</p>
+
+<p>Go to <a href="http://emacs-theme-creator.appspot.com/">emacs-theme-creator</a>.</p>
+
+<p>Enter theme name and author name, and if you have your new theme in a VCS repo, it's url.</p>
+
+<p>You need to submit a color for every face listed, either by entering a color in hex format, i.e. <code>#202020</code>, or by clicking on the form using the supplied colorpicker.</p>
+
+<p>When you are finished, click "Done".</p>
+
+<p>Select all: <code>C-a</code>, copy: <code>C-c</code>, and save in your earlier created file.</p>
+
+<h2>
+<a name="applying-a-new-theme" class="anchor" href="#applying-a-new-theme"><span class="octicon octicon-link"></span></a>Applying a new theme</h2>
+
+<p>Disable the theme you are using at present.</p>
+
+<pre><code>(disable-theme &lt;theme-in-use&gt;)
+</code></pre>
+
+<p>Try out the new theme.</p>
+
+<pre><code>(load-file &lt;your-name-theme-file.el&gt;)
+</code></pre>
+
+<h2>
+<a name="customize-the-theme" class="anchor" href="#customize-the-theme"><span class="octicon octicon-link"></span></a>Customize the theme</h2>
+
+<p>Visit your new theme.</p>
+
+<pre><code>`C-x-C-f` &lt;filename.el&gt;
+</code></pre>
+
+<p>Recommended:</p>
+
+<p>load rainbow-mode to display colors for the supplied colors.</p>
+
+<p>Customize to your likings.</p>
+
+<p>You can see a list of all faces and their current value with</p>
+
+<pre><code>`M-x list-faces-display`
+</code></pre>
+
+<h2>
+<a name="used-libraries" class="anchor" href="#used-libraries"><span class="octicon octicon-link"></span></a>Used Libraries</h2>
+
+<p>Emacs-theme-creator uses Go, <a href="https://angularjs.org/">AngularJS</a>, in particular [angular-seed])(<a href="https://github.com/angular/angular-seed">https://github.com/angular/angular-seed</a>) for the live preview of the selected faces and  <a href="https://github.com/lucasb-eyer/go-colorful">go-colorful</a> for calculating darker and lighter variants of selected faces.</p>
+
+<h2>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<p>picking faces:</p>
+
+<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen1.png" alt="Screenshot"></p>
+
+<p>theme file:</p>
+
+<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen2.png" alt="Screenshot"></p>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO:</h2>
+
+<p>Add more preview languages.</p>
+
+<p>Donate:</p>
+
+<p>Every little helps:</p>
+
+<p>
+  </p>
+    <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">emacs-theme-creator maintained by <a href="https://github.com/mswift42">mswift42</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
