@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', ['colorpicker.module','ngResource'])
+angular.module('myApp.controllers', ['colorpicker.module'])
     .controller('Cpick', ['$scope', function($scope) {
 
         $scope.languages = ["ruby","go","python","haskell","javascript"];
