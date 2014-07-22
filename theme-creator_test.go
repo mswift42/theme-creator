@@ -7,60 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var convertColors = []struct {
-	r, g, b int64
-	hex     string
-}{
-	{
-		// white
-		r:   255,
-		g:   255,
-		b:   255,
-		hex: "#ffffff",
-	},
-	{
-		// black
-		r:   0,
-		g:   0,
-		b:   0,
-		hex: "#000000",
-	},
-	{
-		// red
-		r:   255,
-		g:   0,
-		b:   0,
-		hex: "#ff0000",
-	},
-	{
-		// blue
-		r:   0,
-		g:   0,
-		b:   255,
-		hex: "#0000ff",
-	},
-	{
-		// pink
-		r:   255,
-		g:   0,
-		b:   255,
-		hex: "#ff00ff",
-	},
-	{
-		// maroon
-		r:   128,
-		g:   0,
-		b:   0,
-		hex: "#800000",
-	},
-	{
-		// linen
-		r:   250,
-		g:   240,
-		b:   230,
-		hex: "#faf0e6",
-	},
-}
 var lightendedColors = []struct {
 	old     string
 	lighter string
@@ -77,9 +23,34 @@ var lightendedColors = []struct {
 		factor:  0.20,
 	},
 	{
-		old:     "#ffff40",
-		lighter: "#00ff4e",
-		factor:  0.05,
+		old:     "#34b156",
+		lighter: "#67c177",
+		factor:  0.2,
+	},
+	{
+		old:     "#23557a",
+		lighter: "#547493",
+		factor:  0.2,
+	},
+	{
+		old:     "#ffffff",
+		lighter: "#ffffff",
+		factor:  0.1,
+	},
+	{
+		old:     "#0e2f17",
+		lighter: "#3a543f",
+		factor:  0.2,
+	},
+	{
+		old:     "#721d2e",
+		lighter: "#a06066",
+		factor:  0.3,
+	},
+	{
+		old:     "#8a2436",
+		lighter: "#a5525a",
+		factor:  0.2,
 	},
 }
 var darkenedColors = []struct {
@@ -112,6 +83,21 @@ var darkenedColors = []struct {
 		darker: "#ad2eb6",
 		factor: 0.05,
 	},
+	{
+		old:    "#000000",
+		darker: "#000000",
+		factor: 0.05,
+	},
+	{
+		old:    "#a5525a",
+		darker: "#824248",
+		factor: 0.2,
+	},
+	{
+		old:    "#dab071",
+		darker: "#93784f",
+		factor: 0.3,
+	},
 }
 
 func TestLighten(t *testing.T) {
@@ -133,11 +119,14 @@ func TestDarken(t *testing.T) {
 
 func TestAddColors(t *testing.T) {
 	assert := assert.New(t)
-	cmap := map[string]string{"deffacefg": "#000000", "deffacebg": "e2dfd9"}
+	cmap := map[string]string{"deffacefg": "#000000",
+		"deffacebg": "#e2dfd9", "keyword": "#9e5529"}
 	add := addColors(cmap)
-	assert.Equal("#000000", add["fore2"])
-	assert.Equal("#181818", add["back2"])
-
+	assert.Equal("#181818", add["fore2"])
+	assert.Equal("#cecbc6", add["back2"])
+	assert.Equal("#bab8b3", add["back3"])
+	assert.Equal("#a86239", add["key2"])
+	assert.Equal("#914e26", add["key3"])
 }
 
 func TestHasDarkBg(t *testing.T) {
