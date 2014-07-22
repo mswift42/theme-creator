@@ -1,5 +1,5 @@
 {{define "theme"}}
-;;; {{.themename}}-theme.el --- Emacs 24 theme with a light background.
+;;; {{.themename}}-theme.el --- Emacs 24 theme.
 ;; {{.author}}
 ;; {{.url}}
 ;; Version: 0.2
