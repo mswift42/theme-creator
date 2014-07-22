@@ -1,7 +1,13 @@
 /* app css stylesheet */
+html {
+    position: relative;
+    min-height:100%;
+}
 body {
-    /* background-image:url("/static/bg1.png"); */
+    margin: 0 0 20px;
     background-color:#e7e9eb;
+    overflow:auto;
+    padding-bottom:2em;
 
 }
 .menu {
@@ -136,10 +142,12 @@ header {
 }
 footer {
     text-align:center;
-    position: fixed;
+    position: absolute;
     bottom:0;
-    left:30rem;
+    height:20px;
+    width:100%;
     font-size:0.8em;
+    clear:both;
 }
 
 
