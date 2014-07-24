@@ -64,6 +64,10 @@
           <label for="warningface">Warning Face</label>
           <input required colorpicker name="warningface" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         </div>
+        <div class="colors">
+          <label for="contrast">Adjust Contrast</label>
+          <input type="range" name="contrast" ng-model="contrast" ng-change="adjustCont()" min="20" max="200" step="20" value="100"/>
+        </div>
 
 
         <input class="savebutton" name="sb"  type="submit" value="Done"/>
