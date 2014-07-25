@@ -65,8 +65,12 @@
           <input required colorpicker name="warningface" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         </div>
         <div class="colors">
-          <input type="button" name="contrast"  ng-click="increaseCont()" value="Increase Contrast"/>
+          <input type="button"   ng-click="increaseCont()" value="Increase Contrast"/>
         </div>
+        <!-- <div class="colors"> -->
+        <!--   <\!-- <slider ng-model="lowcontrast" ng-model-range="maxcontrast" floor="-10.0" ceiling="10.0"></slider> -\-> -->
+        <!--   <input type="button"  ng-click="decreaseCont()" value="Decrease Contrast"/> -->
+        <!-- </div> -->
 
 
         <input class="savebutton" name="sb"  type="submit" value="Done"/>
