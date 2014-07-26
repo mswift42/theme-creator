@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', ['colorpicker.module'])
+angular.module('myApp.controllers', ['colorpicker.module','vr.directives.slider'])
     .controller('Cpick', ['$scope', function($scope) {
 
         $scope.languages = ["ruby","go","python","haskell","javascript"];
