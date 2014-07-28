@@ -4,7 +4,7 @@
 ;; {{.url}}
 ;; Version: 0.2
 ;; Package-Requires: ((emacs "24"))
-;; Emacs theme with a light background.
+;; Created with emacs-theme-generator, https://github.com/mswift42/theme-creator.
 ;; Copyright (C) 2014 , {{.author}}
 
 ;;; Commentary:
