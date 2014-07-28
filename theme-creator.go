@@ -2,6 +2,7 @@ package emacsthemecreator
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	htemplate "html/template"
 	"net/http"
@@ -10,9 +11,14 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 )
 
-func init() {
-	http.HandleFunc("/", handler)
-	http.HandleFunc("/savetheme", saveThemeHandler)
+type RandomColors struct {
+	Randkey      string `json:"randkey"`
+	Randbuiltin  string `json:"randbuiltin"`
+	Randstring   string `json:"randstring"`
+	Randfuncname string `json:"randfuncname"`
+	Randvariable string `json:"randvariable"`
+	Randtype     string `json:"randtype"`
+	Randconst    string `json:"randconst"`
 }
 
 // selectedColors - takes an http.Request, and maps of its
@@ -95,6 +101,34 @@ func lighten(col colorful.Color, factor float64) string {
 func hasDarkBg(c *colorful.Color) bool {
 	l, _, _ := c.Lab()
 	return l < 0.5
+}
+
+// randomCol - Return a struct of type RandomColors
+// of a generated WarmPalete for keywordface, builtinface
+// stringface, functionnameface, variableface, typeface
+// and constantface.
+func randomCol() RandomColors {
+	pal, _ := colorful.WarmPalette(7)
+	var rand RandomColors
+	rand.Randkey = colorful.Color(pal[0]).Hex()
+	rand.Randbuiltin = colorful.Color(pal[1]).Hex()
+	rand.Randstring = colorful.Color(pal[2]).Hex()
+	rand.Randfuncname = colorful.Color(pal[3]).Hex()
+	rand.Randvariable = colorful.Color(pal[4]).Hex()
+	rand.Randtype = colorful.Color(pal[5]).Hex()
+	rand.Randconst = colorful.Color(pal[6]).Hex()
+	return rand
+}
+
+func init() {
+	http.HandleFunc("/", handler)
+	http.HandleFunc("/savetheme", saveThemeHandler)
+	http.HandleFunc("/randomcolors", randomColorHandler)
+}
+
+func randomColorHandler(w http.ResponseWriter, r *http.Request) {
+	rand := randomCol()
+	json.NewEncoder(w).Encode(rand)
 }
 
 func saveThemeHandler(w http.ResponseWriter, r *http.Request) {

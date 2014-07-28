@@ -140,3 +140,10 @@ func TestHasDarkBg(t *testing.T) {
 	assert.True(hasDarkBg(&col2))
 	assert.False(hasDarkBg(&col3))
 }
+func TestRandomCol(t *testing.T) {
+	assert := assert.New(t)
+	rands := randomCol()
+	assert.IsType(rands.Randkey, "string")
+	assert.IsType(rands.Randconst, "string")
+	assert.Contains(rands.Randconst, "#")
+}
