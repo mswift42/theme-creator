@@ -55,7 +55,7 @@ Customize the theme
 
 Visit your new theme.
 
-    <kbd>C-x</kbd> - <kbd>C-f</kbd> <filename.el>
+    C-x - C-f <filename.el>
 
 Recommended:
 
@@ -65,7 +65,7 @@ Customize to your likings.
 
 You can see a list of all faces and their current value with
 
-    <kbd>M-x</kbd> list-faces-display
+    M-x list-faces-display
 
 
 Used Libraries
