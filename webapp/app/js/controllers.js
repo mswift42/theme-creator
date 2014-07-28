@@ -2,19 +2,23 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', ['colorpicker.module','vr.directives.slider'])
-    .controller('Cpick', ['$scope', function($scope) {
-
+angular.module('myApp.controllers', ['colorpicker.module'])
+    .controller('Cpick', ['$scope','$http',function($scope,$http) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
-        $scope.increaseCont = function() {
-            var lum = chroma.luminance($scope.deffacebg);
-            if (lum > 0.5) {
-                console.log("bright");
-
-            } else {
-                console.log("dark");
-            }
-
+        $scope.getRandomCol = function() {
+            // xmlhttprequest to get a palette of 7 distinct warm colors
+            // using go-colorful's WarmPalette method.
+            $http.get('/randomcolors').
+                success(function(data) {
+                    $scope.keywordface = data.randkey;
+                    $scope.builtinface = data.randbuiltin;
+                    $scope.stringface = data.randstring;
+                    $scope.functionnameface = data.randfuncname;
+                    $scope.typeface = data.randtype;
+                    $scope.constantface = data.randconst;
+                    $scope.variableface = data.randvariable;
+                });
         };
+
     }]);

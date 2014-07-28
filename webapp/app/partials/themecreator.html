@@ -64,17 +64,14 @@
           <label for="warningface">Warning Face</label>
           <input required colorpicker name="warningface" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         </div>
-        <div class="colors">
-          <input type="button"   ng-click="increaseCont()" value="Increase Contrast"/>
+          <div class="colors">
+          <button type="button" ng-click="getRandomCol()">I feel lucky</button>
         </div>
-        <div class="colors">
-          <slider ng-model="lowcontrast"  floor="-10.0" ceiling="10.0"></slider>
-        </div>
-
 
         <input class="savebutton" name="sb"  type="submit" value="Done"/>
 
   </form>
+
   </div>
   </div>
   <div class="lang" ng-style="{'background-color':deffacebg}">
