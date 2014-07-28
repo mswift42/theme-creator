@@ -32,6 +32,13 @@ When you are finished, click "Done".
 Select all: `C-a`, copy: `C-c`, and save in your earlier created file.
 
 
+Random Faces:
+-------------
+
+Pressing the `I feel lucky` button, will call go-colorful's WarmPalette method to preselect 7 faces. I have left out the default foreground face, comment face and
+warningface, because vary usually strongly from the other faces.
+
+
 Applying a new theme
 --------------------
 
@@ -81,11 +88,14 @@ theme file:
 TODO:
 -----
 
-Add more preview languages.
-Add support for more modes.
+- Add more preview languages.
 
+- Add support for more modes.
+
+- Add slider to increase / decrease contrast.
 
 Donate:
+-------
 
 Every little helps:
 
