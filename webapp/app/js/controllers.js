@@ -6,6 +6,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
     .controller('Cpick', ['$scope','$http',function($scope,$http) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
+
         $scope.getRandomCol = function() {
             // xmlhttprequest to get a palette of 7 distinct warm colors
             // using go-colorful's WarmPalette method.
