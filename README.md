@@ -29,14 +29,14 @@ You need to submit a color for every face listed, either by entering a color in 
 
 When you are finished, click "Done".
 
-Select all: `C-a`, copy: `C-c`, and save in your earlier created file.
+Select all: <kbd>C-a</kbd>, copy: <kbd>C-c</kbd>, and save in your earlier created file.
 
 
 Random Faces:
 -------------
 
 Pressing the `I feel lucky` button, will call go-colorful's WarmPalette method to preselect 7 faces. I have left out the default foreground face, comment face and
-warningface, because vary usually strongly from the other faces.
+warningface, because usually those vary strongly from the other faces.
 
 
 Applying a new theme
@@ -55,7 +55,7 @@ Customize the theme
 
 Visit your new theme.
 
-    `C-x-C-f` <filename.el>
+    <kbd>C-x</kbd> - <kbd>C-f</kbd> <filename.el>
 
 Recommended:
 
@@ -65,13 +65,13 @@ Customize to your likings.
 
 You can see a list of all faces and their current value with
 
-    `M-x list-faces-display`
+    <kbd>M-x</kbd> list-faces-display
 
 
 Used Libraries
 ---------------
 
-Emacs-theme-creator uses Go, [AngularJS](https://angularjs.org/), in particular [angular-seed])(https://github.com/angular/angular-seed) for the live preview of the selected faces and  [go-colorful](https://github.com/lucasb-eyer/go-colorful) for calculating darker and lighter variants of selected faces.
+Emacs-theme-creator uses Go, [AngularJS](https://angularjs.org/), in particular [angular-seed](https://github.com/angular/angular-seed) for the live preview of the selected faces and  [go-colorful](https://github.com/lucasb-eyer/go-colorful) for calculating darker and lighter variants of selected faces.
 
 Screenshots
 -----------
