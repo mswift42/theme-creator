@@ -1,6 +1,10 @@
 package emacsthemecreator
 
 import (
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"strings"
 	"testing"
 
 	"github.com/lucasb-eyer/go-colorful"
@@ -120,13 +124,13 @@ func TestDarken(t *testing.T) {
 func TestAddColors(t *testing.T) {
 	assert := assert.New(t)
 	cmap := map[string]string{"deffacefg": "#000000",
-		"deffacebg": "#e2dfd9", "keyword": "#9e5529"}
+		"deffacebg": "#e2dfd9", "keywordface": "#9e5529"}
 	add := addColors(cmap)
 	assert.Equal("#181818", add["fore2"])
 	assert.Equal("#cecbc6", add["back2"])
 	assert.Equal("#bab8b3", add["back3"])
-	assert.Equal("#a86239", add["key2"])
-	assert.Equal("#914e26", add["key3"])
+	assert.Equal("#ab673f", add["key2"])
+	assert.Equal("#8c4c26", add["key3"])
 }
 
 func TestHasDarkBg(t *testing.T) {
@@ -146,4 +150,25 @@ func TestRandomCol(t *testing.T) {
 	assert.IsType(rands.Randkey, "string")
 	assert.IsType(rands.Randconst, "string")
 	assert.Contains(rands.Randconst, "#")
+}
+
+func TestRandomColorHandler(t *testing.T) {
+	resp := httptest.NewRecorder()
+	uri := "/randomcolors"
+	req, err := http.NewRequest("GET", uri, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	http.DefaultServeMux.ServeHTTP(resp, req)
+	if p, err := ioutil.ReadAll(resp.Body); err != nil {
+		t.Fail()
+	} else {
+		if strings.Contains(string(p), "Error") {
+			t.Errorf("header response shouldn't return error: %s", p)
+		} else if !strings.Contains(string(p), "randbuiltin") {
+			t.Errorf("header response doesn't match:\n%s", p)
+		} else if !strings.Contains(string(p), "randkey") {
+			t.Errorf("header response doesn't match:\n%s", p)
+		}
+	}
 }
