@@ -2,7 +2,7 @@
 ;;; {{.themename}}-theme.el --- Emacs 24 theme with a light background.
 ;; {{.author}}
 ;; {{.url}}
-;; Version: 0.2
+;; Version: 0.1
 ;; Package-Requires: ((emacs "24"))
 ;; Created with emacs-theme-generator, https://github.com/mswift42/theme-creator.
 ;; Copyright (C) 2014 , {{.author}}
@@ -59,18 +59,18 @@
         `(font-lock-function-name-face ((,class (:foreground ,func :bold t))))
         `(font-lock-keyword-face ((,class (:bold ,class :foreground ,keyword))))
         `(font-lock-string-face ((,class (:foreground ,str))))
-        `(font-lock-type-face ((,class (:foreground ,type }}))))
+        `(font-lock-type-face ((,class (:foreground ,type ))))
         `(font-lock-variable-name-face ((,class (:foreground ,var))))
         `(font-lock-warning-face ((,class (:foreground ,warning :background ,bg2))))
         `(region ((,class (:background ,fg3 :foreground ,bg2))))
         `(highlight ((,class (:foreground ,fg3 :background ,bg3))))
-	`(hl-line ((,class (:background  ,bg2))))
+	`(hl-line ((,class (:background  ,bg3))))
 	`(fringe ((,class (:background ,bg2 :foreground ,fg4))))
 	`(cursor ((,class (:background ,bg3))))
         `(show-paren-match-face ((,class (:background ,warning))))
         `(isearch ((,class (:bold t :foreground ,warning :background ,bg3))))
         `(mode-line ((,class (:box (:line-width 1 :color nil :style released-button) :bold t :foreground ,fg4 :background ,bg2))))
-        `(mode-line-inactive ((,class (:box (:line-width 1 :color nil :style pressed-button) :foreground ,fg2 :background ,bg1)))
+        `(mode-line-inactive ((,class (:box (:line-width 1 :color nil :style pressed-button) :foreground ,fg2 :background ,bg1))))
         `(mode-line-buffer-id ((,class (:bold t :foreground ,fg2 :background nil))))
 	`(mode-line-highlight ((,class (:background ,bg4))))
 	`(vertical-border ((,class (:foreground ,fg3))))
@@ -114,7 +114,6 @@
 	`(gnus-header-from ((,class (:foreground ,var))))
 	`(gnus-header-name ((,class (:foreground ,type))))
 	`(gnus-header-subject ((,class (:foreground ,func :bold t))))
-	`(magit-item-highlight ((,class (:background ,bg3))))
 	`(mu4e-view-url-number-face ((,class (:foreground ,type))))
 	`(mu4e-cited-1-face ((,class (:foreground ,fg2))))
 	`(mu4e-cited-7-face ((,class (:foreground ,fg3))))
@@ -145,7 +144,8 @@
         `(rainbow-delimiters-depth-6-face ((,class :foreground ,fg1)))
         `(rainbow-delimiters-depth-7-face ((,class :foreground ,type)))
         `(rainbow-delimiters-depth-8-face ((,class :foreground ,var)))
-        `(rainbow-delimiters-unmatched-face ((,class :foreground ,warning))))))
+        `(magit-item-highlight ((,class :background ,bg3)))
+        `(rainbow-delimiters-unmatched-face ((,class :foreground ,warning)))))
 
 ;;;###autoload
 (when load-file-name
