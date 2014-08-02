@@ -11,6 +11,8 @@ import (
 	"github.com/lucasb-eyer/go-colorful"
 )
 
+// RandomColors - struct for xmlhttprequest
+// to /randomcolors.
 type RandomColors struct {
 	Randkey      string `json:"randkey"`
 	Randbuiltin  string `json:"randbuiltin"`
