@@ -104,6 +104,10 @@ func hasDarkBg(c *colorful.Color) bool {
 	l, _, _ := c.Lab()
 	return l < 0.5
 }
+
+// randomColorHelper - Helper function for random
+// warm and happy colors. Assigns to each field of
+// RandomColors a color of a given slive of colorful.Color.
 func randomColorHelper(pal []colorful.Color) RandomColors {
 	var rand RandomColors
 	rand.Randkey = colorful.Color(pal[0]).Hex()
