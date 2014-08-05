@@ -1,6 +1,3 @@
-<header>
-  <h2>Emacs Theme Creator</h2>
-</header>
 <div class="themecreator">
   <form role="form" action="/savetheme" method="post">
     <div class="form-control">
@@ -17,7 +14,6 @@
         <label for="url">Repository url</label>
         <input type="url" name="url"  value=""/>
       </div>
-      <br/>
       <br/>
       <div class="cpick">
         <div class="colors">
@@ -65,7 +61,8 @@
           <input required colorpicker name="warningface" type="text" ng-model="warningface" /><span class="colorpreview" style="background-color:{{warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         </div>
           <div class="colors">
-          <button type="button" ng-click="getRandomCol()">I feel lucky</button>
+            <button type="button" class="rndbutton" ng-click="getRandomColWarm()">Random Warm Colors</button>
+            <button type="button" class="rndbutton" ng-click="getRandomColHappy()">Random Happy Colors</button>
         </div>
 
         <input class="savebutton" name="sb"  type="submit" value="Done"/>

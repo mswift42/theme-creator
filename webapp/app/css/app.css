@@ -108,12 +108,6 @@ body {
 header {
     text-align:center;
 }
-/* .colors > input { */
-/*     width:80px; */
-/*     box-align:end; */
-/*     -webkit-box-align:end; */
-
-/* } */
 
 
 .form-control {
@@ -141,30 +135,16 @@ header {
     margin-top:22px;
 }
 footer {
-    text-align:center;
+    text-align:right;
     position: absolute;
     bottom:0;
+    right:8px;
     height:20px;
     width:100%;
     font-size:0.8em;
     clear:both;
 }
-
-
-/* .grid:after { */
-/*   content: ""; */
-/*   display: table; */
-/*   clear: both; */
-/* } */
-
-/* .themepreview { */
-/*     float:right; */
-/*     margin-right:8px; */
-/*     padding:8px; */
-/* } */
-/* .form-control { */
-/*     float:left; */
-/*     width:50%; */
-/*     margin-left:10px; */
-
-/* } */
+.rndbutton {
+    font-size: 80%;
+    margin-right:12px;
+}
