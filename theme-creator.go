@@ -116,21 +116,30 @@ func randomColorHelper(pal []colorful.Color) RandomColors {
 	return rand
 }
 
-// randomCol - Return a struct of type RandomColors
+// randomColWarm - Return a struct of type RandomColors
 // of a generated WarmPalete for keywordface, builtinface
 // stringface, functionnameface, variableface, typeface
 // and constantface.
-func randomCol() RandomColors {
-	pal, _ := colorful.WarmPalette(7)
-	var rand RandomColors
-	rand.Randkey = colorful.Color(pal[0]).Hex()
-	rand.Randbuiltin = colorful.Color(pal[1]).Hex()
-	rand.Randstring = colorful.Color(pal[2]).Hex()
-	rand.Randfuncname = colorful.Color(pal[3]).Hex()
-	rand.Randvariable = colorful.Color(pal[4]).Hex()
-	rand.Randtype = colorful.Color(pal[5]).Hex()
-	rand.Randconst = colorful.Color(pal[6]).Hex()
-	return rand
+func randomColWarm() (RandomColors, error) {
+	pal, err := colorful.WarmPalette(7)
+	if err != nil {
+		return RandomColors{}, err
+	}
+	rand := randomColorHelper(pal)
+	return rand, nil
+}
+
+// randomColHappy - Return a struct of type RandomColors
+// of a generated WarmPalete for keywordface, builtinface
+// stringface, functionnameface, variableface, typeface
+// and constantface.
+func randomColHappy() (RandomColors, error) {
+	pal, err := colorful.HappyPalette(7)
+	if err != nil {
+		return RandomColors{}, err
+	}
+	rand := randomColorHelper(pal)
+	return rand, nil
 }
 
 func init() {
@@ -140,7 +149,10 @@ func init() {
 }
 
 func randomColorHandler(w http.ResponseWriter, r *http.Request) {
-	rand := randomCol()
+	rand, err := randomColWarm()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 	json.NewEncoder(w).Encode(rand)
 }
 
