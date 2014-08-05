@@ -104,6 +104,17 @@ func hasDarkBg(c *colorful.Color) bool {
 	l, _, _ := c.Lab()
 	return l < 0.5
 }
+func randomColorHelper(pal []colorful.Color) RandomColors {
+	var rand RandomColors
+	rand.Randkey = colorful.Color(pal[0]).Hex()
+	rand.Randbuiltin = colorful.Color(pal[1]).Hex()
+	rand.Randstring = colorful.Color(pal[2]).Hex()
+	rand.Randfuncname = colorful.Color(pal[3]).Hex()
+	rand.Randvariable = colorful.Color(pal[4]).Hex()
+	rand.Randtype = colorful.Color(pal[5]).Hex()
+	rand.Randconst = colorful.Color(pal[6]).Hex()
+	return rand
+}
 
 // randomCol - Return a struct of type RandomColors
 // of a generated WarmPalete for keywordface, builtinface
