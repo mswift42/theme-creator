@@ -145,11 +145,19 @@ func randomColHappy() (RandomColors, error) {
 func init() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/savetheme", saveThemeHandler)
-	http.HandleFunc("/randomcolors", randomColorHandler)
+	http.HandleFunc("/randomcolorswarm", randomColorWarmHandler)
+	http.HandleFunc("/randomcolorshappy", randomColorHappyHandler)
 }
 
-func randomColorHandler(w http.ResponseWriter, r *http.Request) {
+func randomColorWarmHandler(w http.ResponseWriter, r *http.Request) {
 	rand, err := randomColWarm()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	json.NewEncoder(w).Encode(rand)
+}
+func randomColorHappyHandler(w http.ResponseWriter, r *http.Request) {
+	rand, err := randomColHappy()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
