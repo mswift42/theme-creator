@@ -191,3 +191,43 @@ func TestRandomColorHappyHandler(t *testing.T) {
 		}
 	}
 }
+func TestHandler(t *testing.T) {
+	resp := httptest.NewRecorder()
+	uri := "/"
+	req, err := http.NewRequest("GET", uri, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	http.DefaultServeMux.ServeHTTP(resp, req)
+	if p, err := ioutil.ReadAll(resp.Body); err != nil {
+		t.Fail()
+	} else {
+		if strings.Contains(string(p), "Error") {
+			t.Errorf("header response shouldn't return error: %s", p)
+		} else if !strings.Contains(string(p), "success") {
+			t.Errorf("header response doesn't match:\n%s", p)
+		}
+	}
+}
+func TestSaveThemeHandler(t *testing.T) {
+	resp := httptest.NewRecorder()
+	uri := "/savetheme"
+	req, err := http.NewRequest("GET", uri, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	bodystrings := []string{"custom-theme-set-faces", "font-lock-builtin-face", "warning", "Code", "Emacs", "deftheme", "min-colors"}
+	http.DefaultServeMux.ServeHTTP(resp, req)
+	if p, err := ioutil.ReadAll(resp.Body); err != nil {
+		t.Fail()
+	} else {
+		if strings.Contains(string(p), "Error") {
+			t.Errorf("header response shouldn't return error: %s", p)
+		}
+		for _, i := range bodystrings {
+			if !strings.Contains(string(p), i) {
+				t.Errorf("header response, doesn't match:\n%s", p)
+			}
+		}
+	}
+}
