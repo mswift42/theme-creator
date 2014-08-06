@@ -133,23 +133,100 @@ func TestAddColors(t *testing.T) {
 	assert.Equal("#8c4c26", add["key3"])
 }
 
+var darkBg = []struct {
+	bg  string
+	yes bool
+}{
+	{
+		bg:  "#000000",
+		yes: true,
+	},
+	{
+		bg:  "#ffffff",
+		yes: false,
+	},
+	{
+		bg:  "#002b36",
+		yes: true,
+	},
+	{
+		bg:  "#586e75",
+		yes: true,
+	},
+	{
+		bg:  "#fdf6e3",
+		yes: false,
+	},
+	{
+		bg:  "#d2d2d2",
+		yes: false,
+	},
+	{
+		bg:  "#daa1e6",
+		yes: false,
+	},
+	{
+		bg:  "#932ad7",
+		yes: true,
+	},
+	{
+		bg:  "#d7cf47",
+		yes: false,
+	},
+	{
+		bg:  "#87e37e",
+		yes: false,
+	},
+	{
+		bg:  "#f0c1bc",
+		yes: false,
+	},
+	{
+		bg:  "#dc6c60",
+		yes: false,
+	},
+	{
+		bg:  "#39c52b",
+		yes: false,
+	},
+}
+
 func TestHasDarkBg(t *testing.T) {
 	assert := assert.New(t)
-	col, _ := colorful.Hex("#000000")
-	col1, _ := colorful.Hex("#002b36")
-	col2, _ := colorful.Hex("#586e75")
-	col3, _ := colorful.Hex("#fdf6e3")
-	assert.True(hasDarkBg(&col))
-	assert.True(hasDarkBg(&col1))
-	assert.True(hasDarkBg(&col2))
-	assert.False(hasDarkBg(&col3))
+	for _, i := range darkBg {
+		col, _ := colorful.Hex(i.bg)
+		actual := hasDarkBg(&col)
+		assert.Equal(actual, i.yes)
+	}
 }
-func TestRandomCol(t *testing.T) {
+func TestRandomColWarm(t *testing.T) {
 	assert := assert.New(t)
 	rands, _ := randomColWarm()
 	assert.IsType(rands.Randkey, "string")
 	assert.IsType(rands.Randconst, "string")
 	assert.Contains(rands.Randconst, "#")
+}
+func TestRandomColHappy(t *testing.T) {
+	assert := assert.New(t)
+	rands, _ := randomColHappy()
+	assert.IsType(rands.Randkey, "string")
+	assert.IsType(rands.Randconst, "string")
+	assert.Contains(rands.Randbuiltin, "#")
+}
+func TestRandomColorHelper(t *testing.T) {
+	assert := assert.New(t)
+	col1, _ := colorful.Hex("#000000")
+	col2, _ := colorful.Hex("#111111")
+	col3, _ := colorful.Hex("#222222")
+	col4, _ := colorful.Hex("#333333")
+	col5, _ := colorful.Hex("#444444")
+	col6, _ := colorful.Hex("#555555")
+	col7, _ := colorful.Hex("#666666")
+	pal := []colorful.Color{col1, col2, col3, col4, col5, col6, col7}
+	rand := randomColorHelper(pal)
+	assert.Equal(rand.Randkey, "#000000")
+	assert.Equal(rand.Randbuiltin, "#111111")
+	assert.Equal(rand.Randtype, "#555555")
 }
 
 func TestRandomColorHandler(t *testing.T) {
@@ -226,8 +303,11 @@ func TestSaveThemeHandler(t *testing.T) {
 		}
 		for _, i := range bodystrings {
 			if !strings.Contains(string(p), i) {
-				t.Errorf("header response, doesn't match:\n%s", p)
+				t.Errorf("header response doesn't match:\n%s", p)
 			}
+		}
+		if strings.Contains(string(p), "sportschau") {
+			t.Errorf("header response doesn't match:\n%s", p)
 		}
 	}
 }
