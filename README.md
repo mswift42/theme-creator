@@ -35,7 +35,9 @@ Select all: <kbd>C-a</kbd>, copy: <kbd>C-c</kbd>, and save in your earlier creat
 Random Faces:
 -------------
 
-Pressing the `I feel lucky` button, will call go-colorful's WarmPalette method to preselect 7 faces. I have left out the default foreground face, comment face and
+You can get random colors from go-colorful's 3 different color palettes, i.e.
+WarmPalette, SoftPalette and HappyPalette by pressing the corresponding button.
+ I have left out the default foreground face, comment face and
 warningface, because usually those vary strongly from the other faces.
 
 
