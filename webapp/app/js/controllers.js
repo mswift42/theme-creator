@@ -21,6 +21,18 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                     $scope.variableface = data.randvariable;
                 });
         };
+        $scope.getRandomColSoft = function() {
+            $http.get('/randomcolorssoft').
+                success(function(data) {
+                    $scope.keywordface = data.randkey;
+                    $scope.builtinface = data.randbuiltin;
+                    $scope.stringface = data.randstring;
+                    $scope.functionnameface = data.randfuncname;
+                    $scope.typeface = data.randtype;
+                    $scope.constantface = data.randconst;
+                    $scope.variableface = data.randvariable;
+                });
+        };
         $scope.getRandomColHappy = function() {
             $http.get('/randomcolorshappy').
                 success(function(data) {

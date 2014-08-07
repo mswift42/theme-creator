@@ -213,6 +213,14 @@ func TestRandomColHappy(t *testing.T) {
 	assert.IsType(rands.Randconst, "string")
 	assert.Contains(rands.Randbuiltin, "#")
 }
+func TestRandomColSoft(t *testing.T) {
+	assert := assert.New(t)
+	rands, _ := randomColSoft()
+	assert.IsType(rands.Randkey, "string")
+	assert.IsType(rands.Randconst, "string")
+	assert.Contains(rands.Randbuiltin, "#")
+}
+
 func TestRandomColorHelper(t *testing.T) {
 	assert := assert.New(t)
 	col1, _ := colorful.Hex("#000000")
@@ -264,6 +272,24 @@ func TestRandomColorHappyHandler(t *testing.T) {
 		if strings.Contains(string(p), "Error") {
 			t.Errorf("header response shouldn't return error: %s", p)
 		} else if !strings.Contains(string(p), "randbuiltin") {
+			t.Errorf("header response doesn't match:\n%s", p)
+		}
+	}
+}
+func TestRandomColorSoftHandler(t *testing.T) {
+	resp := httptest.NewRecorder()
+	uri := "/randomcolorssoft"
+	req, err := http.NewRequest("GET", uri, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	http.DefaultServeMux.ServeHTTP(resp, req)
+	if p, err := ioutil.ReadAll(resp.Body); err != nil {
+		t.Fail()
+	} else {
+		if strings.Contains(string(p), "Error") {
+			t.Errorf("header response shouldn't return error: %s", p)
+		} else if !strings.Contains(string(p), "randkey") {
 			t.Errorf("header response doesn't match:\n%s", p)
 		}
 	}

@@ -146,11 +146,25 @@ func randomColHappy() (RandomColors, error) {
 	return rand, nil
 }
 
+// randomColSoft - Return a struct of type RandomColors
+// of a generated SoftPalete for keywordface, builtinface
+// stringface, functionnameface, variableface, typeface
+// and constantface.
+func randomColSoft() (RandomColors, error) {
+	pal, err := colorful.SoftPalette(7)
+	if err != nil {
+		return RandomColors{}, err
+	}
+	rand := randomColorHelper(pal)
+	return rand, nil
+}
+
 func init() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/savetheme", saveThemeHandler)
 	http.HandleFunc("/randomcolorswarm", randomColorWarmHandler)
 	http.HandleFunc("/randomcolorshappy", randomColorHappyHandler)
+	http.HandleFunc("/randomcolorssoft", randomColorSoftHandler)
 }
 
 func randomColorWarmHandler(w http.ResponseWriter, r *http.Request) {
@@ -162,6 +176,13 @@ func randomColorWarmHandler(w http.ResponseWriter, r *http.Request) {
 }
 func randomColorHappyHandler(w http.ResponseWriter, r *http.Request) {
 	rand, err := randomColHappy()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+	json.NewEncoder(w).Encode(rand)
+}
+func randomColorSoftHandler(w http.ResponseWriter, r *http.Request) {
+	rand, err := randomColSoft()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
