@@ -84,11 +84,11 @@ picking faces:
 
 get random colors:
 
-![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen3.png)
+![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen2.png)
 
 theme file:
 
-![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen2.png)
+![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen3.png)
 
 
 TODO:
