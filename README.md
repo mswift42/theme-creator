@@ -73,7 +73,7 @@ You can see a list of all faces and their current value with
 Used Libraries
 ---------------
 
-Emacs-theme-creator uses Go, [AngularJS](https://angularjs.org/), in particular [angular-seed](https://github.com/angular/angular-seed) for the live preview of the selected faces and  [go-colorful](https://github.com/lucasb-eyer/go-colorful) for calculating darker and lighter variants of selected faces.
+Emacs-theme-creator uses Go, [AngularJS](https://angularjs.org/), in particular [angular-seed](https://github.com/angular/angular-seed), for the live preview of the selected faces and  [go-colorful](https://github.com/lucasb-eyer/go-colorful) for calculating darker and lighter variants of selected as well as the random palettes of warm, happy and soft colors.
 
 Screenshots
 -----------
