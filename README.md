@@ -1,4 +1,4 @@
-emacs-theme-creator
+[emacs-theme-creator](http://mswift42.github.io/theme-creator)
 =============
 
 create emacs 24 themes.
