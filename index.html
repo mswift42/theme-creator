@@ -1,36 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="emacs-theme-creator : create emacs 24 themes.">
+    <title>emacs-theme-creator by mswift42</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>emacs-theme-creator</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mswift42/theme-creator">View on GitHub</a>
-
-          <h1 id="project_title">emacs-theme-creator</h1>
-          <h2 id="project_tagline">create emacs 24 themes.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mswift42/theme-creator/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mswift42/theme-creator/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <header>
+        <h1>emacs-theme-creator</h1>
+        <p>create emacs 24 themes.</p>
+        <p class="view"><a href="https://github.com/mswift42/theme-creator">View the Project on GitHub <small>mswift42/theme-creator</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mswift42/theme-creator/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mswift42/theme-creator/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mswift42/theme-creator">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
 <a name="emacs-theme-creator" class="anchor" href="#emacs-theme-creator"><span class="octicon octicon-link"></span></a>emacs-theme-creator</h1>
 
@@ -68,7 +64,9 @@
 <h2>
 <a name="random-faces" class="anchor" href="#random-faces"><span class="octicon octicon-link"></span></a>Random Faces:</h2>
 
-<p>Pressing the <code>I feel lucky</code> button, will call go-colorful's WarmPalette method to preselect 7 faces. I have left out the default foreground face, comment face and
+<p>You can get random colors from go-colorful's 3 different color palettes, i.e.
+WarmPalette, SoftPalette and HappyPalette by pressing the corresponding button.
+ I have left out the default foreground face, comment face and
 warningface, because usually those vary strongly from the other faces.</p>
 
 <h2>
@@ -106,7 +104,7 @@ warningface, because usually those vary strongly from the other faces.</p>
 <h2>
 <a name="used-libraries" class="anchor" href="#used-libraries"><span class="octicon octicon-link"></span></a>Used Libraries</h2>
 
-<p>Emacs-theme-creator uses Go, <a href="https://angularjs.org/">AngularJS</a>, in particular <a href="https://github.com/angular/angular-seed">angular-seed</a> for the live preview of the selected faces and  <a href="https://github.com/lucasb-eyer/go-colorful">go-colorful</a> for calculating darker and lighter variants of selected faces.</p>
+<p>Emacs-theme-creator uses Go, <a href="https://angularjs.org/">AngularJS</a>, in particular <a href="https://github.com/angular/angular-seed">angular-seed</a>, for the live preview of the selected faces and  <a href="https://github.com/lucasb-eyer/go-colorful">go-colorful</a> for calculating darker and lighter variants of selected as well as the random palettes of warm, happy and soft colors.</p>
 
 <h2>
 <a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
@@ -117,11 +115,11 @@ warningface, because usually those vary strongly from the other faces.</p>
 
 <p>get random colors:</p>
 
-<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen3.png" alt="Screenshot"></p>
+<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen2.png" alt="Screenshot"></p>
 
 <p>theme file:</p>
 
-<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen2.png" alt="Screenshot"></p>
+<p><img src="https://github.com/mswift42/theme-creator/raw/master/screen3.png" alt="Screenshot"></p>
 
 <h2>
 <a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO:</h2>
@@ -138,16 +136,11 @@ warningface, because usually those vary strongly from the other faces.</p>
 <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5823VL6B3XM86" title="Donate once-off to this project using Paypal"><img src="http://img.shields.io/paypal/donate.png?color=yellow" alt="PayPayl donate button"></a></p>
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">emacs-theme-creator maintained by <a href="https://github.com/mswift42">mswift42</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mswift42">mswift42</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
