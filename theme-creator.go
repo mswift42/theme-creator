@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/lucasb-eyer/go-colorful"
+	"github.com/mswift42/go-colorful"
 )
 
 // RandomColors - struct for xmlhttprequest
