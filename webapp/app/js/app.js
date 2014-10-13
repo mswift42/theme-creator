@@ -6,5 +6,6 @@ angular.module('myApp', [
     'myApp.directives',
     'myApp.controllers',
     'colorpicker.module',
+    'vr.directives.slider',
 
 ]);
