@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lucasb-eyer/go-colorful"
+	"github.com/mswift42/go-colorful"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -107,16 +107,16 @@ var darkenedColors = []struct {
 func TestLighten(t *testing.T) {
 	assert := assert.New(t)
 	for _, i := range lightendedColors {
-		col, _ := colorful.Hex(i.old)
-		actual := lighten(col, i.factor)
+		c, _ := colorful.Hex(i.old)
+		actual := lighten(c, i.factor)
 		assert.Equal(actual, i.lighter)
 	}
 }
 func TestDarken(t *testing.T) {
 	assert := assert.New(t)
 	for _, i := range darkenedColors {
-		col, _ := colorful.Hex(i.old)
-		actual := darken(col, i.factor)
+		c, _ := colorful.Hex(i.old)
+		actual := darken(c, i.factor)
 		assert.Equal(actual, i.darker)
 	}
 }

@@ -1,11 +1,14 @@
+/* global chroma */
 'use strict';
 
 /* Controllers */
 
-angular.module('myApp.controllers', ['colorpicker.module'])
+angular.module('myApp.controllers', ['colorpicker.module','vr.directives.slider'])
     .controller('Cpick', ['$scope','$http',function($scope,$http) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
+        $scope.adjustbg = false;
+        // $scope.colorcontrast = 0;
 
         $scope.getRandomColWarm = function() {
             // xmlhttprequest to get a palette of 7 distinct warm colors
@@ -46,5 +49,75 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 });
         };
 
+        var darkBg = function(color) {
+            return chroma(color).luminance() <=0.5;
+        };
+        $scope.decContrast = function() {
+            if (darkBg($scope.deffacebg)) {
+                if ($scope.adjustbg) {
+                    $scope.deffacebg = chroma($scope.deffacebg).brighten(1).hex();
+                }
+                $scope.deffacefg = chroma($scope.deffacefg).darken(1).hex();
+                $scope.commentface =chroma($scope.commentface).darken(1).hex();
+                $scope.keywordface = chroma($scope.keywordface).darken(1).hex();
+                $scope.builtinface = chroma($scope.builtinface).darken(1).hex();
+                $scope.stringface = chroma($scope.stringface).darken(1).hex();
+                $scope.functionnameface = chroma($scope.functionnameface).darken(1).hex();
+                $scope.typeface = chroma($scope.typeface).darken(1).hex();
+                $scope.constantface = chroma($scope.constantface).darken(1).hex();
+                $scope.variableface = chroma($scope.variableface).darken(1).hex();
+            } else {
+                if ($scope.deffacefg) {
+                    $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
+                }
+                $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
+                $scope.commentface =chroma($scope.commentface).brighten(1).hex();
+                $scope.keywordface = chroma($scope.keywordface).brighten(1).hex();
+                $scope.builtinface = chroma($scope.builtinface).brighten(1).hex();
+                $scope.stringface = chroma($scope.stringface).brighten(1).hex();
+                $scope.functionnameface = chroma($scope.functionnameface).brighten(1).hex();
+                $scope.typeface = chroma($scope.typeface).brighten(1).hex();
+                $scope.constantface = chroma($scope.constantface).brighten(1).hex();
+                $scope.variableface = chroma($scope.variableface).brighten(1).hex();
+            }
 
-    }]);
+        };
+        $scope.incContrast = function() {
+            if (darkBg($scope.deffacebg)) {
+                if ($scope.adjustbg) {
+                $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
+                }
+                $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
+                $scope.commentface =chroma($scope.commentface).brighten(1).hex();
+                $scope.keywordface = chroma($scope.keywordface).brighten(1).hex();
+                $scope.builtinface = chroma($scope.builtinface).brighten(1).hex();
+                $scope.stringface = chroma($scope.stringface).brighten(1).hex();
+                $scope.functionnameface = chroma($scope.functionnameface).brighten(1).hex();
+                $scope.typeface = chroma($scope.typeface).brighten(1).hex();
+                $scope.constantface = chroma($scope.constantface).brighten(1).hex();
+                $scope.variableface = chroma($scope.variableface).brighten(1).hex();
+            } else {
+                if ($scope.adjustbg) {
+                    $scope.deffacebg = chroma($scope.deffacebg).brighten(1).hex();
+                }
+                $scope.deffacefg = chroma($scope.deffacefg).darken(1).hex();
+                $scope.commentface =chroma($scope.commentface).darken(1).hex();
+                $scope.keywordface = chroma($scope.keywordface).darken(1).hex();
+                $scope.builtinface = chroma($scope.builtinface).darken(1).hex();
+                $scope.stringface = chroma($scope.stringface).darken(1).hex();
+                $scope.functionnameface = chroma($scope.functionnameface).darken(1).hex();
+                $scope.typeface = chroma($scope.typeface).darken(1).hex();
+                $scope.constantface = chroma($scope.constantface).darken(1).hex();
+                $scope.variableface = chroma($scope.variableface).darken(1).hex();
+            }
+        };
+
+
+
+
+
+
+
+
+
+            }]);
