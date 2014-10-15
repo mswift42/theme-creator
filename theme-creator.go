@@ -40,6 +40,12 @@ func selectedColors(r *http.Request) map[string]string {
 	facemap["themename"] = r.FormValue("themename")
 	facemap["author"] = r.FormValue("authorname")
 	facemap["url"] = r.FormValue("url")
+	bgcol, _ := colorful.Hex(r.FormValue("deffacebg"))
+	if hasDarkBg(&bgcol) {
+		facemap["background"] = "dark"
+	} else {
+		facemap["background"] = "light"
+	}
 	return facemap
 }
 
