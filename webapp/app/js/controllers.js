@@ -8,7 +8,6 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
-        // $scope.colorcontrast = 0;
 
         $scope.getRandomColWarm = function() {
             // xmlhttprequest to get a palette of 7 distinct warm colors
