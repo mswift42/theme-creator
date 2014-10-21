@@ -162,6 +162,15 @@
         `(magit-hash ((,class (:foreground ,fg2))))
         `(magit-diff-file-header ((,class (:foreground ,fg2 :background ,bg3))))
         `(lazy-highlight ((,class (:foreground ,fg2 :background ,bg3))))
+        `(term ((,class (:foreground ,fg1 :background ,bg1))))
+        `(term-color-black ((,class (:foreground ,bg3 :background ,bg3))))
+        `(term-color-blue ((,class (:foreground ,func :background ,func))))
+        `(term-color-red ((,class (:foreground ,keyword :background ,bg3))))
+        `(term-color-green ((,class (:foreground ,type :background ,bg3))))
+        `(term-color-yellow ((,class (:foreground ,var :background ,var))))
+        `(term-color-magenta ((,class (:foreground ,builtin :background ,builtin))))
+        `(term-color-cyan ((,class (:foreground ,str :background ,str))))
+        `(term-color-white ((,class (:foreground ,fg2 :background ,fg2))))
         `(rainbow-delimiters-unmatched-face ((,class :foreground ,warning)))))
 
 ;;;###autoload

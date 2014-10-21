@@ -81,10 +81,11 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             }
 
         };
+
         $scope.incContrast = function() {
             if (darkBg($scope.deffacebg)) {
                 if ($scope.adjustbg) {
-                $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
+                    $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
                 }
                 $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
                 $scope.commentface =chroma($scope.commentface).brighten(1).hex();
@@ -110,13 +111,4 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 $scope.variableface = chroma($scope.variableface).darken(1).hex();
             }
         };
-
-
-
-
-
-
-
-
-
-            }]);
+    }]);
