@@ -66,7 +66,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 $scope.constantface = chroma($scope.constantface).darken(1).hex();
                 $scope.variableface = chroma($scope.variableface).darken(1).hex();
             } else {
-                if ($scope.deffacefg) {
+                if ($scope.adjustbg) {
                     $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
                 }
                 $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
