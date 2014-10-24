@@ -9,6 +9,14 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
+        $scope.faces = {
+            deffacefg : "", deffacebg : "",
+            keywordface : "", builtinface : "",
+            stringface : "", functionnameface : "",
+            typeface : "", constantface : "",
+            variableface : ""
+        };
+
         $scope.getRandomColWarm = function() {
             // xmlhttprequest to get a palette of 7 distinct warm colors
             // using go-colorful's WarmPalette method.
