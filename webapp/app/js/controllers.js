@@ -6,29 +6,41 @@
 angular.module('myApp.controllers', ['colorpicker.module'])
     .controller('Cpick', ['$scope','$http',function($scope,$http) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
-        $scope.prevlang = "ruby";
+        $scope.prevlang = "go";
         $scope.adjustbg = false;
 
-        $scope.faces = {
-            deffacefg : "", deffacebg : "",
-            keywordface : "", builtinface : "",
-            stringface : "", functionnameface : "",
-            typeface : "", constantface : "",
-            variableface : ""
+        var faces = {
+            deffacefg : "#ffffff", deffacebg : "#ffffff",
+            keywordface : "#ffffff", builtinface : "#ffffff",
+            stringface : "#ffffff", functionnameface : "#ffffff",
+            typeface : "#ffffff", constantface : "#ffffff",
+            variableface : "#ffffff", warningface : "#ffffff",
+            commentface : "#ffffff"
         };
+        var setRandomFaces = function(data) {
+            faces["keywordface"] = data.randkey;
+            faces["builtinface"]= data.randbuiltin;
+            faces["stringface"] = data.randstring;
+            faces["functionnameface"] = data.randfuncname;
+            faces["typeface"]= data.randtype;
+            faces["constantface"] = data.randconst;
+            faces["variableface"] = data.randvariable;
+        };
+
 
         $scope.getRandomColWarm = function() {
             // xmlhttprequest to get a palette of 7 distinct warm colors
             // using go-colorful's WarmPalette method.
             $http.get('/randomcolorswarm').
                 success(function(data) {
-                    $scope.keywordface = data.randkey;
-                    $scope.builtinface = data.randbuiltin;
-                    $scope.stringface = data.randstring;
-                    $scope.functionnameface = data.randfuncname;
-                    $scope.typeface = data.randtype;
-                    $scope.constantface = data.randconst;
-                    $scope.variableface = data.randvariable;
+                    faces.keywordface = data.randkey;
+                    faces.builtinface = data.randbuiltin;
+                    faces.stringface = data.randstring;
+                    faces.functionnameface = data.randfuncname;
+                    faces.typeface = data.randtype;
+                    faces.constantface = data.randconst;
+                    faces.variableface = data.randvariable;
+                    // setRandomFaces(data);
                 });
         };
         $scope.getRandomColSoft = function() {
