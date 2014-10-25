@@ -18,13 +18,13 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             commentface : "#ffffff"
         };
         var setRandomFaces = function(data) {
-            faces["keywordface"] = data.randkey;
-            faces["builtinface"]= data.randbuiltin;
-            faces["stringface"] = data.randstring;
-            faces["functionnameface"] = data.randfuncname;
-            faces["typeface"]= data.randtype;
-            faces["constantface"] = data.randconst;
-            faces["variableface"] = data.randvariable;
+            faces.keywordface = data.randkey;
+            faces.builtinface= data.randbuiltin;
+            faces.stringface = data.randstring;
+            faces.functionnameface = data.randfuncname;
+            faces.typeface= data.randtype;
+            faces.constantface = data.randconst;
+            faces.variableface = data.randvariable;
         };
 
 
