@@ -9,22 +9,22 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.prevlang = "go";
         $scope.adjustbg = false;
 
-        var faces = {
-            deffacefg : "#ffffff", deffacebg : "#ffffff",
-            keywordface : "#ffffff", builtinface : "#ffffff",
-            stringface : "#ffffff", functionnameface : "#ffffff",
-            typeface : "#ffffff", constantface : "#ffffff",
-            variableface : "#ffffff", warningface : "#ffffff",
-            commentface : "#ffffff"
+        $scope.faces = {
+            deffacefg : "", deffacebg : "",
+            keywordface : "", builtinface : "",
+            stringface : "", functionnameface : "",
+            typeface : "", constantface : "",
+            variableface : "", warningface : "",
+            commentface : ""
         };
         var setRandomFaces = function(data) {
-            faces.keywordface = data.randkey;
-            faces.builtinface= data.randbuiltin;
-            faces.stringface = data.randstring;
-            faces.functionnameface = data.randfuncname;
-            faces.typeface= data.randtype;
-            faces.constantface = data.randconst;
-            faces.variableface = data.randvariable;
+            $scope.faces.keywordface = data.randkey;
+            $scope.faces.builtinface= data.randbuiltin;
+            $scope.faces.stringface = data.randstring;
+            $scope.faces.functionnameface = data.randfuncname;
+            $scope.faces.typeface= data.randtype;
+            $scope.faces.constantface = data.randconst;
+            $scope.faces.variableface = data.randvariable;
         };
 
 
@@ -33,38 +33,19 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             // using go-colorful's WarmPalette method.
             $http.get('/randomcolorswarm').
                 success(function(data) {
-                    faces.keywordface = data.randkey;
-                    faces.builtinface = data.randbuiltin;
-                    faces.stringface = data.randstring;
-                    faces.functionnameface = data.randfuncname;
-                    faces.typeface = data.randtype;
-                    faces.constantface = data.randconst;
-                    faces.variableface = data.randvariable;
-                    // setRandomFaces(data);
+                    setRandomFaces(data);
                 });
         };
         $scope.getRandomColSoft = function() {
             $http.get('/randomcolorssoft').
                 success(function(data) {
-                    $scope.keywordface = data.randkey;
-                    $scope.builtinface = data.randbuiltin;
-                    $scope.stringface = data.randstring;
-                    $scope.functionnameface = data.randfuncname;
-                    $scope.typeface = data.randtype;
-                    $scope.constantface = data.randconst;
-                    $scope.variableface = data.randvariable;
+                    setRandomFaces(data);
                 });
         };
         $scope.getRandomColHappy = function() {
             $http.get('/randomcolorshappy').
                 success(function(data) {
-                    $scope.keywordface = data.randkey;
-                    $scope.builtinface = data.randbuiltin;
-                    $scope.stringface = data.randstring;
-                    $scope.functionnameface = data.randfuncname;
-                    $scope.typeface = data.randtype;
-                    $scope.constantface = data.randconst;
-                    $scope.variableface = data.randvariable;
+                    setRandomFaces(data);
                 });
         };
 
