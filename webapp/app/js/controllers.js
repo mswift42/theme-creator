@@ -10,12 +10,12 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.adjustbg = false;
 
         $scope.faces = {
-            deffacefg : "", deffacebg : "",
-            keywordface : "", builtinface : "",
-            stringface : "", functionnameface : "",
-            typeface : "", constantface : "",
-            variableface : "", warningface : "",
-            commentface : ""
+            deffacefg : "#303030", deffacebg : "#ffffff",
+            keywordface : "#000000", builtinface : "#000000",
+            stringface : "#000000", functionnameface : "#000000",
+            typeface : "#000000", constantface : "#000000",
+            variableface : "#000000", warningface : "#ff0000",
+            commentface : "#606060"
         };
         var setRandomFaces = function(data) {
             $scope.faces.keywordface = data.randkey;
@@ -52,64 +52,45 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         var darkBg = function(color) {
             return chroma(color).luminance() <=0.5;
         };
+
+        var facenames = ["deffacefg","commentface","keywordface",
+                                 "builtinface","stringface","functionnameface",
+                         "typeface","constantface","variableface"];
         $scope.decContrast = function() {
-            if (darkBg($scope.deffacebg)) {
+            if (darkBg($scope.faces.deffacebg)) {
                 if ($scope.adjustbg) {
-                    $scope.deffacebg = chroma($scope.deffacebg).brighten(1).hex();
+                    $scope.faces.deffacebg = chroma($scope.faces.deffacebg).brighten(1).hex();
                 }
-                $scope.deffacefg = chroma($scope.deffacefg).darken(1).hex();
-                $scope.commentface =chroma($scope.commentface).darken(1).hex();
-                $scope.keywordface = chroma($scope.keywordface).darken(1).hex();
-                $scope.builtinface = chroma($scope.builtinface).darken(1).hex();
-                $scope.stringface = chroma($scope.stringface).darken(1).hex();
-                $scope.functionnameface = chroma($scope.functionnameface).darken(1).hex();
-                $scope.typeface = chroma($scope.typeface).darken(1).hex();
-                $scope.constantface = chroma($scope.constantface).darken(1).hex();
-                $scope.variableface = chroma($scope.variableface).darken(1).hex();
+                for (var i = 0;i<facenames.length;i++) {
+                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).darken(1).hex();
+                }
             } else {
                 if ($scope.adjustbg) {
-                    $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
+                    $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
-                $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
-                $scope.commentface =chroma($scope.commentface).brighten(1).hex();
-                $scope.keywordface = chroma($scope.keywordface).brighten(1).hex();
-                $scope.builtinface = chroma($scope.builtinface).brighten(1).hex();
-                $scope.stringface = chroma($scope.stringface).brighten(1).hex();
-                $scope.functionnameface = chroma($scope.functionnameface).brighten(1).hex();
-                $scope.typeface = chroma($scope.typeface).brighten(1).hex();
-                $scope.constantface = chroma($scope.constantface).brighten(1).hex();
-                $scope.variableface = chroma($scope.variableface).brighten(1).hex();
+                for (var i = 0;i<facenames.length;i++) {
+                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).brighten(1).hex();
+                }
             }
 
         };
 
         $scope.incContrast = function() {
-            if (darkBg($scope.deffacebg)) {
+            if (darkBg($scope.faces.deffacebg)) {
                 if ($scope.adjustbg) {
-                    $scope.deffacebg = chroma($scope.deffacebg).darken(1).hex();
+                    $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
-                $scope.deffacefg = chroma($scope.deffacefg).brighten(1).hex();
-                $scope.commentface =chroma($scope.commentface).brighten(1).hex();
-                $scope.keywordface = chroma($scope.keywordface).brighten(1).hex();
-                $scope.builtinface = chroma($scope.builtinface).brighten(1).hex();
-                $scope.stringface = chroma($scope.stringface).brighten(1).hex();
-                $scope.functionnameface = chroma($scope.functionnameface).brighten(1).hex();
-                $scope.typeface = chroma($scope.typeface).brighten(1).hex();
-                $scope.constantface = chroma($scope.constantface).brighten(1).hex();
-                $scope.variableface = chroma($scope.variableface).brighten(1).hex();
+
+                for (var i=0;i<facenames.length;i++) {
+                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).brighten(1).hex();
+                }
             } else {
                 if ($scope.adjustbg) {
-                    $scope.deffacebg = chroma($scope.deffacebg).brighten(1).hex();
+                    $scope.faces.deffacebg = chroma($scope.faces.deffacebg).brighten(1).hex();
                 }
-                $scope.deffacefg = chroma($scope.deffacefg).darken(1).hex();
-                $scope.commentface =chroma($scope.commentface).darken(1).hex();
-                $scope.keywordface = chroma($scope.keywordface).darken(1).hex();
-                $scope.builtinface = chroma($scope.builtinface).darken(1).hex();
-                $scope.stringface = chroma($scope.stringface).darken(1).hex();
-                $scope.functionnameface = chroma($scope.functionnameface).darken(1).hex();
-                $scope.typeface = chroma($scope.typeface).darken(1).hex();
-                $scope.constantface = chroma($scope.constantface).darken(1).hex();
-                $scope.variableface = chroma($scope.variableface).darken(1).hex();
-            }
+                for (i=0;i<facenames.length;i++) {
+                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).darken(1).hex();
+                }
+                                                       }
         };
     }]);
