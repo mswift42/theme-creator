@@ -6,7 +6,7 @@
 angular.module('myApp.controllers', ['colorpicker.module'])
     .controller('Cpick', ['$scope','$http',function($scope,$http) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
-        $scope.prevlang = "go";
+        $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
         $scope.faces = {
@@ -68,7 +68,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
-                for (var i = 0;i<facenames.length;i++) {
+                for ( i=0;i<facenames.length;i++) {
                     $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).brighten(1).hex();
                 }
             }
