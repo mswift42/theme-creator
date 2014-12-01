@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/home/severin/.node/bin/npm', 'test' ]
+2 info using npm@2.1.4
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose config Skipping project config: /home/severin/.npmrc. (matches userconfig)
+6 verbose stack Error: ENOENT, open '/home/severin/package.json'
+7 verbose cwd /home/severin/go/src/github.com/mswift42/theme-creator/webapp/test
+8 error Linux 3.13.0-39-generic
+9 error argv "node" "/home/severin/.node/bin/npm" "test"
+10 error node v0.10.33
+11 error npm  v2.1.4
+12 error path /home/severin/package.json
+13 error code ENOENT
+14 error errno 34
+15 error ENOENT, open '/home/severin/package.json'
+16 error If you need help, you may report this error at:
+16 error     <http://github.com/npm/npm/issues>
+17 verbose exit [ 34, true ]
