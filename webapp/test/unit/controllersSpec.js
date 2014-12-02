@@ -6,15 +6,22 @@ describe('controllers', function(){
     beforeEach(module('myApp.controllers'));
 
 
-  it('should ....', inject(function($controller) {
+
+  it('Cpick controller should exist.', inject(function($controller) {
     //spec body
     var Cpick = $controller('Cpick', { $scope: {} });
       expect(Cpick).toBeDefined();
   }));
+    it('$scope.adjustbg should be set to false.', inject(function($controller, $rootScope) {
 
-  // it('should ....', inject(function($controller) {
-  //   //spec body
-  //   var myCtrl2 = $controller('MyCtrl2', { $scope: {} });
-  //   expect(myCtrl2).toBeDefined();
-  // }));
+        var scope = $rootScope.$new();
+        var Cpick = $controller('Cpick', { $scope: scope});
+        scope.$digest();
+        expect(scope.adjustbg === false);
+        expect(scope.prevlang === 'ruby');
+        expect(scope.faces.deffacefg === "#303030");
+    }));
+
+
+
 });
