@@ -49,7 +49,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 });
         };
 
-        var darkBg = function(color) {
+        $scope.darkBg = function(color) {
             return chroma(color).luminance() <=0.5;
         };
 
@@ -57,7 +57,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                                  "builtinface","stringface","functionnameface",
                          "typeface","constantface","variableface"];
         $scope.decContrast = function() {
-            if (darkBg($scope.faces.deffacebg)) {
+            if ($scope.darkBg($scope.faces.deffacebg)) {
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).brighten(1).hex();
                 }
@@ -76,7 +76,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         };
 
         $scope.incContrast = function() {
-            if (darkBg($scope.faces.deffacebg)) {
+            if ($scope.darkBg($scope.faces.deffacebg)) {
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
