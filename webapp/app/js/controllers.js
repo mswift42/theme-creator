@@ -17,7 +17,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             variableface : "#000000", warningface : "#ff0000",
             commentface : "#606060"
         };
-        var setRandomFaces = function(data) {
+        $scope.setRandomFaces = function(data) {
             $scope.faces.keywordface = data.randkey;
             $scope.faces.builtinface= data.randbuiltin;
             $scope.faces.stringface = data.randstring;
@@ -33,19 +33,19 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             // using go-colorful's WarmPalette method.
             $http.get('/randomcolorswarm').
                 success(function(data) {
-                    setRandomFaces(data);
+                    $scope.setRandomFaces(data);
                 });
         };
         $scope.getRandomColSoft = function() {
             $http.get('/randomcolorssoft').
                 success(function(data) {
-                    setRandomFaces(data);
+                    $scope.setRandomFaces(data);
                 });
         };
         $scope.getRandomColHappy = function() {
             $http.get('/randomcolorshappy').
                 success(function(data) {
-                    setRandomFaces(data);
+                    $scope.setRandomFaces(data);
                 });
         };
 
