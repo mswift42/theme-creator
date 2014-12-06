@@ -56,6 +56,8 @@ describe('controllers', function(){
            scope.$digest();
 
            expect(scope.facenames[0]).toEqual("deffacefg");
+           expect(scope.facenames[1]).toEqual("commentface");
+           expect(scope.facenames[4]).toEqual("stringface");
        }));
 
 
