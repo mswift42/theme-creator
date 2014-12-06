@@ -49,6 +49,14 @@ describe('controllers', function(){
            expect(scope.faces.builtinface).toEqual("#444444");
 
        }));
+    it('facenames should contain the correct names.',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope: scope});
+           scope.$digest();
+
+           expect(scope.facenames[0]).toEqual("deffacefg");
+       }));
 
 
 

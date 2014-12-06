@@ -53,7 +53,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             return chroma(color).luminance() <=0.5;
         };
 
-        var facenames = ["deffacefg","commentface","keywordface",
+        $scope.facenames = ["deffacefg","commentface","keywordface",
                                  "builtinface","stringface","functionnameface",
                          "typeface","constantface","variableface"];
         $scope.decContrast = function() {
@@ -61,15 +61,15 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).brighten(1).hex();
                 }
-                for (var i = 0;i<facenames.length;i++) {
-                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).darken(1).hex();
+                for (var i = 0;i<$scope.facenames.length;i++) {
+                    $scope.faces[$scope.facenames[i]] = chroma($scope.faces[$scope.facenames[i]]).darken(1).hex();
                 }
             } else {
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
-                for ( i=0;i<facenames.length;i++) {
-                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).brighten(1).hex();
+                for ( i=0;i<$scope.facenames.length;i++) {
+                    $scope.faces[$scope.facenames[i]] = chroma($scope.faces[$scope.facenames[i]]).brighten(1).hex();
                 }
             }
 
@@ -81,15 +81,15 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).darken(1).hex();
                 }
 
-                for (var i=0;i<facenames.length;i++) {
-                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).brighten(1).hex();
+                for (var i=0;i<$scope.facenames.length;i++) {
+                    $scope.faces[$scope.facenames[i]] = chroma($scope.faces[$scope.facenames[i]]).brighten(1).hex();
                 }
             } else {
                 if ($scope.adjustbg) {
                     $scope.faces.deffacebg = chroma($scope.faces.deffacebg).brighten(1).hex();
                 }
-                for (i=0;i<facenames.length;i++) {
-                    $scope.faces[facenames[i]] = chroma($scope.faces[facenames[i]]).darken(1).hex();
+                for (i=0;i<$scope.facenames.length;i++) {
+                    $scope.faces[$scope.facenames[i]] = chroma($scope.faces[$scope.facenames[i]]).darken(1).hex();
                 }
                                                        }
         };
