@@ -60,6 +60,20 @@ describe('controllers', function(){
            expect(scope.facenames[4]).toEqual("stringface");
        }));
 
+    it('decContrast should only affect background if adjustbg is set to true.',
+      inject(function($controller,$rootScope) {
+        var scope = $rootScope.$new();
+        var Cpick = $controller('Cpick', {$scope: scope});
+        scope.$digest();
+        scope.adjustbg = false;
+        scope.decContrast();
+        expect(scope.faces.deffacebg).toEqual("#ffffff");
+        scope.adjustbg = true;
+        scope.decContrast();
+        expect(scope.faces.deffacebg).toEqual("#fcfcfc");
+
+      }));
+
 
 
 
