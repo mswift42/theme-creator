@@ -98,7 +98,6 @@ TODO:
 
 - Add support for more modes.
 
-- Add slider to increase / decrease contrast.
 
 Donate:
 -------
