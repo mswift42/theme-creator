@@ -129,7 +129,7 @@
         `(js3-error-face ((,class (:underline ,warning))))
         `(js3-external-variable-face ((,class (:foreground ,var))))
         `(js3-function-param-face ((,class (:foreground ,key3))))
-	`(warning ((,class (:foreground ,warning))))
+	`(warning ((,class (:foreground ,warning)))) 
 	`(ac-completion-face ((,class (:underline t :foreground ,keyword))))
 	`(info-quoted-name ((,class (:foreground ,builtin))))
 	`(info-string ((,class (:foreground ,str))))
