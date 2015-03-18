@@ -40,6 +40,14 @@ WarmPalette, SoftPalette and HappyPalette by pressing the corresponding button.
  I have left out the default foreground face, comment face and
 warningface, because usually those vary strongly from the other faces.
 
+Save for later:
+---------------
+
+If you want to save your progress, you can click the 'Save for later' button. This
+will store your selected faces to localStorage amd restore them if you revisit the site.
+
+Clicking on 'reset theme' will set all faces to the original preset.
+
 
 Applying a new theme
 --------------------
