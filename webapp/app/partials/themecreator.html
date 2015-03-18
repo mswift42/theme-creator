@@ -64,13 +64,18 @@
             <button type="button" class="rndbutton" ng-click="getRandomColWarm()">Warm Colors</button>
             <button type="button" class="rndbutton" ng-click="getRandomColSoft()">Soft Colors</button>
             <button type="button" class="rndbutton" ng-click="getRandomColHappy()">Happy Colors</button>
-        </div>
+          </div>
+          <div class="adjbackground">
         <label class="rndbuttonlbl" for="adjbg">Adjust Background</label>
         <input type="checkbox" class="rndbutton" ng-model="adjustbg" name="adjbg">
         <button type="button" class="rndbutton" ng-click="decContrast()">Reduce Contrast</button>
         <button type="button" class="rndbutton" ng-click="incContrast()">Increase Contrast</button>
-        <input class="savebutton" name="sb"  type="submit" value="Done"/>
+          </div>
+        <div class="savebuttons">
+        <input class="rndbutton" name="sb"  type="submit" value="Done"/>
         <button type="button" class="rndbutton" ng-click="saveTheme()">Save for later</button>
+        <button type="button" class="rndbutton" ng-click="resetTheme()">Reset Theme</button>
+        </div>
 
   </form>
 
