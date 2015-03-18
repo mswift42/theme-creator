@@ -4,12 +4,13 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['colorpicker.module'])
-    .controller('Cpick', ['$scope','$http',function($scope,$http) {
+    .controller('Cpick', ['$scope','$http','lstorage',function($scope,$http,lstorage) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
-        $scope.faces = {
+
+        $scope.faces = lstorage.loadFaces() || {
             deffacefg : "#303030", deffacebg : "#ffffff",
             keywordface : "#000000", builtinface : "#000000",
             stringface : "#000000", functionnameface : "#000000",
@@ -17,6 +18,9 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             variableface : "#000000", warningface : "#ff0000",
             commentface : "#606060"
         };
+
+
+
         $scope.setRandomFaces = function(data) {
             $scope.faces.keywordface = data.randkey;
             $scope.faces.builtinface= data.randbuiltin;
@@ -47,6 +51,9 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 success(function(data) {
                     $scope.setRandomFaces(data);
                 });
+        };
+        $scope.saveTheme = function() {
+            lstorage.setFaces($scope.faces);
         };
 
         $scope.darkBg = function(color) {

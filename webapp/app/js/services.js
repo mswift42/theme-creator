@@ -10,11 +10,14 @@ angular.module('myApp.services',[])
         
         var storageService = {};
         storageService.name = 'mswift42themecreator';
+        storageService.containsKey = function() {
+            return localStorage.getItem(storageService.name) != null;
+        };
         storageService.loadFaces = function() {
-            localStorage.getItem(storageService.name);
+            return JSON.parse(localStorage.getItem(storageService.name));
         };
         storageService.setFaces = function(faces) {
-            localStorage.setItem(storageService.name, faces);
+            localStorage.setItem(storageService.name, JSON.stringify(faces));
         };
         return storageService;
     });
