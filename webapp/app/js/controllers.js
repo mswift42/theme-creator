@@ -9,9 +9,8 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
-
-        $scope.faces = lstorage.loadFaces() || {
-            deffacefg : "#303030", deffacebg : "#ffffff",
+        var initialfaces = {
+                        deffacefg : "#303030", deffacebg : "#ffffff",
             keywordface : "#000000", builtinface : "#000000",
             stringface : "#000000", functionnameface : "#000000",
             typeface : "#000000", constantface : "#000000",
@@ -19,6 +18,13 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             commentface : "#606060"
         };
 
+
+
+        $scope.faces = lstorage.loadFaces() || initialfaces;
+
+        $scope.resetTheme = function () {
+            $scope.faces = initialfaces;
+        };
 
 
         $scope.setRandomFaces = function(data) {
