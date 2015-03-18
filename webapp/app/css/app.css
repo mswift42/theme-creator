@@ -54,6 +54,7 @@ body {
 .colors > label {
     position:relative;
     float:left;
+    font-size:91%;
 }
 .colors > input {
     position: relative;
@@ -116,7 +117,7 @@ header {
     margin-left:20px;
     float:left;
     background-color:#ffffff;
-    margin-top:20px;
+    margin-top:18px;
     background-color: white;
     border-left: .2em solid #b9bcbf;
     border-right: .2em solid #b9bcbf;
@@ -152,4 +153,16 @@ footer {
     font-size:80%;
     margin-left:12px;
     margin-right:4px;
+    margin-bottom:0.4em;
+    
+}
+.savebuttons {
+    margin-left:1em;
+}
+.savebuttons > button {
+    margin-top:1em;
+    margin-left:2em;
+}
+.adjbackground {
+    line-height:80%;
 }
