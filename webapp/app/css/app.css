@@ -70,12 +70,19 @@ body {
 [class*='col-'] {
     float: left;
 }
-.col-2-3 {
-    width: 66.66%;
-}
-.col-1-3 {
-    width: 33.33%;
-}
+
+/* .themecreator { */
+/*     width:100%; */
+/*     display:flex; */
+/*     flex-direction:row; */
+/*     justify-content:space-around; */
+/* } */
+
+/* .faceselection { */
+/*     flex-shrink:0; */
+/* } */
+    
+
 .lang {
     width: 50%;
     float:right;
