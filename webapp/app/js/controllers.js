@@ -24,6 +24,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
 
         $scope.resetTheme = function () {
             $scope.faces = initialfaces;
+            lstorage.deleteKey();
         };
 
 

@@ -19,5 +19,8 @@ angular.module('myApp.services',[])
         storageService.setFaces = function(faces) {
             localStorage.setItem(storageService.name, JSON.stringify(faces));
         };
+        storageService.deleteKey = function() {
+            localStorage.removeItem(storageService.name);
+        };
         return storageService;
     });
