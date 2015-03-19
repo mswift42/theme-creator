@@ -4,6 +4,7 @@
 
 describe('controllers', function(){
     beforeEach(module('myApp.controllers'));
+    beforeEach(module('myApp.services'));
 
 
 
@@ -73,6 +74,18 @@ describe('controllers', function(){
         expect(scope.faces.deffacebg).toEqual("#fcfcfc");
 
       }));
+
+    it('saveTheme fn should store faces object into localStorage',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick',{$scope:scope});
+           scope.$digest();
+           scope.saveTheme();
+           expect(localStorage.getItem('mswift42themecreator')).toBeDefined();
+           scope.resetTheme();
+           expect(localStorage.getItem('mswift42themecreator')).toBe(null);
+       }));
+                                       
 
 
 
