@@ -29,14 +29,14 @@ body {
 }
 .colors > .btn {
     margin-left:1em;
-    font-size:80%;
+    font-size:70%;
 }
 .colors > label {
-    font-size:90%;
+    font-size:85%;
 
 }
 .colors > p {
-    font-size:80%;
+    font-size:70%;
 }
 
 
@@ -114,11 +114,11 @@ header {
 .colors > input {
     margin-right:40px;
 }
-.savebutton {
-    margin-right:auto;
-    margin-left:80px;
-    margin-top:22px;
-}
+/* .savebutton { */
+/*     margin-right:auto; */
+/*     margin-left:80px; */
+/*     margin-top:22px; */
+/* } */
 footer {
     text-align:right;
     position: absolute;
