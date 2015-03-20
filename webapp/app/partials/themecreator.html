@@ -18,12 +18,12 @@
         <br/>
         <div class="cpick">
           <div class="colors row">
-            <label  class="col-xs-6">Background Color</label>
+            <label  class="col-xs-6">Background Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 offset 0 pull-right" required colorpicker name="deffacebg" type="text" ng-model="faces.deffacebg" />
           </div>
           <div class="colors row">
-            <label for="deffacefg" class="col-xs-6">Foreground Color</label>
+            <label for="deffacefg" class="col-xs-6">Foreground Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 pull-right"required colorpicker name="deffacefg" type="text" ng-model="faces.deffacefg" />
           </div>
@@ -38,22 +38,22 @@
             <input class="col-xs-3 pull-right"required colorpicker name="stringface" type="text" ng-model="faces.stringface" />
           </div>
           <div class="colors row">
-            <label class="col-xs-6" for="keywordface">Keyword Face Color</label>
+            <label class="col-xs-6" for="keywordface">Keyword Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 pull-right" required colorpicker name="keywordface" type="text" ng-model="faces.keywordface" />
           </div>
           <div class="colors row">
-            <label class="col-xs-6"for="functionnameface">Functionname Color</label>
+            <label class="col-xs-6"for="functionnameface">Functionname Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 pull-right" required colorpicker name="functionnameface" type="text" ng-model="faces.functionnameface" />
           </div>
           <div class="colors row">
-            <label class="col-xs-6" for="commentface">Comment Color</label>
+            <label class="col-xs-6" for="commentface">Comment Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 pull-right"required colorpicker name="commentface" type="text" ng-model="faces.commentface" />
           </div>
           <div class="colors row">
-            <label class="col-xs-6" for="variableface">Variable Face Color</label>
+            <label class="col-xs-6" for="variableface">Variable Face</label>
             <span class="colorpreview col-xs-1 offset-1" style="background-color:{{faces.variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-xs-3 pull-right"required colorpicker name="variableface" type="text" ng-model="faces.variableface" />
           </div>
@@ -86,7 +86,7 @@
           </div>
           <div class="colors row">
             <button class="btn col-xs-3 col-xs-offset-1" name="sb"  type="submit" value="Done">Done</button>
-            <button type="button" class="btn col-xs-3 col-xs-offset-1" ng-click="saveTheme()">Save for later</button>
+            <button type="button" class="btn col-xs-3 col-xs-offset-1" ng-click="saveTheme()">Save</button>
             <button type="button" class="btn col-xs-3 col-xs-offset-1" ng-click="resetTheme()">Reset Theme</button>
           </div>
 

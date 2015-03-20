@@ -31,6 +31,7 @@ pre {
 }
 .btn {
     font-size:80%o;
+    background-color:#eaeaea;
 }
 .colors > .btn {
     margin-left:1em;
