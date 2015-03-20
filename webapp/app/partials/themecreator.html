@@ -1,29 +1,30 @@
-<div class="themecreator">
-  <div class="faceselection">
+<div class="themecreator container">
+  <div class="faceselection col-md-4">
     <form role="form" action="/savetheme"  method="post">
-      <div class="form-control">
-        <div class="colors">
-          <label for="themename">Theme name</label>
-          <input required name="themename" ng-model="themename" type="text" value=""/>
+        <div class="colors row">
+          <label class="col-md-4"for="themename">Theme name</label>
+          <input class="col-md-6 offset-2 pull-right"required name="themename" ng-model="themename" type="text" value=""/>
         </div>
 
-        <div class="colors">
-          <label for="authorname">Author name</label>
-          <input required name="authorname"  type="text" value=""/>
+        <div class="colors row">
+          <label class="col-md-4"for="authorname">Author name</label>
+          <input class="col-md-6 offset-2 pull-right"required name="authorname"  type="text" value=""/>
         </div>
-        <div class="colors">
-          <label for="url">Repository url</label>
-          <input type="url" name="url"  value=""/>
+        <div class="colors row">
+          <label class="col-md-4" for="url">Repository url</label>
+          <input class="col-md-6 offset-2 pull-right"type="url" name="url"  value=""/>
         </div>
         <br/>
         <div class="cpick">
-          <div class="colors">
-            <label for="deffacebg">Background Color</label>
-            <input required colorpicker name="deffacebg" type="text" ng-model="faces.deffacebg" /><span class="colorpreview" style="background-color:{{faces.deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label  class="col-md-6">Background Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.deffacebg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 offset 0 pull-right" required colorpicker name="deffacebg" type="text" ng-model="faces.deffacebg" />
           </div>
-          <div class="colors">
-            <label for="deffacefg">Foreground Color</label>
-            <input required colorpicker name="deffacefg" type="text" ng-model="faces.deffacefg" /><span class="colorpreview" style="background-color:{{faces.deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label for="deffacefg" class="col-md-6">Foreground Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right"required colorpicker name="deffacefg" type="text" ng-model="faces.deffacefg" />
           </div>
           <div class="colors">
             <label for="builtinface">Builtin Face</label>
@@ -81,8 +82,8 @@
     </form>
       </div>
         </div>
-      </div>
-      <div class="lang" ng-style="{'background-color':faces.deffacebg}">
+
+      <div class="lang col-md-6" ng-style="{'background-color':faces.deffacebg}">
         <div class="sellang">
           <select ng-model="prevlang" ng-options="language for language in languages">
           </select>
