@@ -77,11 +77,12 @@
             <button type="button" class="btn col-md-3 col-md-offset-1" ng-click="getRandomColHappy()">Happy Colors</button>
           </div>
         </br>
-          <div class="adjbackground row">
-            <label class="col-md-2" for="adjbg">Adjust Background</label>
-            <input type="checkbox" class="col-md-1 offset-1" ng-model="adjustbg" name="adjbg">
-            <button type="button" class="col-md-4 pull-right"ng-click="decContrast()">Reduce Contrast</button>
-            <button type="button" class="col-md-4 pull-right" ng-click="incContrast()">Increase Contrast</button>
+          <div class="colors row">
+
+            <button type="button" class="btn col-md-3"ng-click="decContrast()">Red. Contrast</button>
+            <button type="button" class="btn col-md-3" ng-click="incContrast()">Inc. Contrast</button>
+            <p class="col-md-2">Adjust Background</p>
+            <input type="checkbox" class="col-md-1 pull-right" ng-model="adjustbg" name="adjbg"/>
           </div>
           <div class="savebuttons">
             <input class="rndbutton" name="sb"  type="submit" value="Done"/>

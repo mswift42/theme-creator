@@ -8,6 +8,7 @@ body {
     background-color:#e7e9eb;
     overflow:auto;
     padding-bottom:2em;
+    color:#333;
 
 }
 .themecreator {
@@ -24,12 +25,19 @@ body {
     margin-top:0.8em;
 }
 .btn {
-    font-size:80%;
+    font-size:80%o;
 }
 .colors > .btn {
     margin-left:1em;
+    font-size:80%;
 }
+.colors > label {
+    font-size:90%;
 
+}
+.colors > p {
+    font-size:80%;
+}
 
 
 
