@@ -26,21 +26,25 @@
             <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.deffacefg}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-md-3 pull-right"required colorpicker name="deffacefg" type="text" ng-model="faces.deffacefg" />
           </div>
-          <div class="colors">
-            <label for="builtinface">Builtin Face</label>
-            <input colorpicker name="builtinface" type="text" ng-model="faces.builtinface" /><span class="colorpreview" style="background-color:{{faces.builtinface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="builtinface">Builtin Face</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.builtinface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right"colorpicker name="builtinface" type="text" ng-model="faces.builtinface" />
           </div>
-          <div class="colors">
-            <label for="stringface">String Face</label>
-            <input required colorpicker name="stringface" type="text" ng-model="faces.stringface" /><span class="colorpreview" style="background-color:{{faces.stringface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="stringface">String Face</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.stringface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right"required colorpicker name="stringface" type="text" ng-model="faces.stringface" />
           </div>
-          <div class="colors">
-            <label for="keywordface">Keyword Face Color</label>
-            <input required colorpicker name="keywordface" type="text" ng-model="faces.keywordface" /><span class="colorpreview" style="background-color:{{faces.keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="keywordface">Keyword Face Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.keywordface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right" required colorpicker name="keywordface" type="text" ng-model="faces.keywordface" />
           </div>
-          <div class="colors">
-            <label for="functionnameface">Functionname Color</label>
-            <input required colorpicker name="functionnameface" type="text" ng-model="faces.functionnameface" /><span class="colorpreview" style="background-color:{{faces.functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6"for="functionnameface">Functionname Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right" required colorpicker name="functionnameface" type="text" ng-model="faces.functionnameface" />
           </div>
           <div class="colors">
             <label for="commentface">Comment Color</label>
