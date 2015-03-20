@@ -9,7 +9,9 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
-        var initialfaces = {
+        var initialfaces = function () {
+            var faces = 
+        {
                         deffacefg : "#303030", deffacebg : "#ffffff",
             keywordface : "#000000", builtinface : "#000000",
             stringface : "#000000", functionnameface : "#000000",
@@ -17,14 +19,17 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             variableface : "#000000", warningface : "#ff0000",
             commentface : "#606060"
         };
+            return faces;
+        };
 
 
 
-        $scope.faces = lstorage.loadFaces() || initialfaces;
+        $scope.faces = lstorage.loadFaces() || initialfaces();
 
         $scope.resetTheme = function () {
-            $scope.faces = initialfaces;
             lstorage.deleteKey();
+            $scope.faces = initialfaces();
+
         };
 
 
