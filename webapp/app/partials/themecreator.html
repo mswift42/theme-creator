@@ -46,36 +46,42 @@
             <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.functionnameface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
             <input class="col-md-3 pull-right" required colorpicker name="functionnameface" type="text" ng-model="faces.functionnameface" />
           </div>
-          <div class="colors">
-            <label for="commentface">Comment Color</label>
-            <input required colorpicker name="commentface" type="text" ng-model="faces.commentface" /><span class="colorpreview" style="background-color:{{faces.commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="commentface">Comment Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.commentface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right"required colorpicker name="commentface" type="text" ng-model="faces.commentface" />
           </div>
-          <div class="colors">
-            <label for="variableface">Variable Face Color</label>
-            <input required colorpicker name="variableface" type="text" ng-model="faces.variableface" /><span class="colorpreview" style="background-color:{{faces.variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="variableface">Variable Face Color</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.variableface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right"required colorpicker name="variableface" type="text" ng-model="faces.variableface" />
           </div>
-          <div class="colors">
-            <label for="typeface">Type Face</label>
-            <input required colorpicker name="typeface" type="text" ng-model="faces.typeface" /><span class="colorpreview" style="background-color:{{faces.typeface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="typeface">Type Face</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.typeface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right" required colorpicker name="typeface" type="text" ng-model="faces.typeface" />
           </div>
-          <div class="colors">
-            <label for="constantface">Constant Face</label>
-            <input required colorpicker name="constantface" type="text" ng-model="faces.constantface" /><span class="colorpreview" style="background-color:{{faces.constantface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="constantface">Constant Face</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.constantface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right" required colorpicker name="constantface" type="text" ng-model="faces.constantface" />
           </div>
-          <div class="colors">
-            <label for="warningface">Warning Face</label>
-            <input required colorpicker name="warningface" type="text" ng-model="faces.warningface" /><span class="colorpreview" style="background-color:{{faces.warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+          <div class="colors row">
+            <label class="col-md-6" for="warningface">Warning Face</label>
+            <span class="colorpreview col-md-1 offset-1" style="background-color:{{faces.warningface}}">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <input class="col-md-3 pull-right" required colorpicker name="warningface" type="text" ng-model="faces.warningface" />
           </div>
-          <div class="colors">
-            <button type="button" class="rndbutton" ng-click="getRandomColWarm()">Warm Colors</button>
-            <button type="button" class="rndbutton" ng-click="getRandomColSoft()">Soft Colors</button>
-            <button type="button" class="rndbutton" ng-click="getRandomColHappy()">Happy Colors</button>
+          <div class="colors row">
+            <button type="button" class="btn col-md-3 col-md-offset-1" ng-click="getRandomColWarm()">Warm Colors</button>
+            <button type="button" class="btn col-md-3 col-md-offset-1" ng-click="getRandomColSoft()">Soft Colors</button>
+            <button type="button" class="btn col-md-3 col-md-offset-1" ng-click="getRandomColHappy()">Happy Colors</button>
           </div>
-          <div class="adjbackground">
-            <label class="rndbuttonlbl" for="adjbg">Adjust Background</label>
-            <input type="checkbox" class="rndbutton" ng-model="adjustbg" name="adjbg">
-            <button type="button" class="rndbutton" ng-click="decContrast()">Reduce Contrast</button>
-            <button type="button" class="rndbutton" ng-click="incContrast()">Increase Contrast</button>
+        </br>
+          <div class="adjbackground row">
+            <label class="col-md-2" for="adjbg">Adjust Background</label>
+            <input type="checkbox" class="col-md-1 offset-1" ng-model="adjustbg" name="adjbg">
+            <button type="button" class="col-md-4 pull-right"ng-click="decContrast()">Reduce Contrast</button>
+            <button type="button" class="col-md-4 pull-right" ng-click="incContrast()">Increase Contrast</button>
           </div>
           <div class="savebuttons">
             <input class="rndbutton" name="sb"  type="submit" value="Done"/>

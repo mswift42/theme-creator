@@ -23,6 +23,12 @@ body {
 .colors {
     margin-top:0.8em;
 }
+.btn {
+    font-size:80%;
+}
+.colors > .btn {
+    margin-left:1em;
+}
 
 
 
