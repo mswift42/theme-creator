@@ -11,6 +11,11 @@ body {
     color:#333;
 
 }
+pre {
+    font-size:105%;
+}
+
+
 .themecreator {
     margin-top:2em;
 }
@@ -37,6 +42,7 @@ body {
 }
 .colors > p {
     font-size:70%;
+    color:#333;
 }
 
 
