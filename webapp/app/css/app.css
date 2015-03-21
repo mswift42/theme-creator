@@ -19,12 +19,12 @@ pre {
 .themecreator {
     margin-top:2em;
 }
-.menu {
-    list-style: none;
-    border-bottom: 0.1em solid black;
-    margin-bottom: 2em;
-    padding: 0 0 0.5em;
-}
+/* .menu { */
+/*     list-style: none; */
+/*     border-bottom: 0.1em solid black; */
+/*     margin-bottom: 2em; */
+/*     padding: 0 0 0.5em; */
+/* } */
 
 .colors {
     margin-top:0.8em;
@@ -45,29 +45,33 @@ pre {
     font-size:70%;
     color:#333;
 }
+.colors > input {
+    font-size:90%;
+}
 
 
 
 .faceselection {
     background-color:white;
-        border-left: .2em solid #b9bcbf;
+    border-left: .2em solid #b9bcbf;
     border-right: .2em solid #b9bcbf;
     -moz-box-shadow: 0 0 10px 10px #b9bcbf;
     -webkit-box-shadow: 0 0 10px 10px #b9bcbf;
     -icab-box-shadow: 0 0 10px 10px #b9bcbf;
     -o-box-shadow: 0 0 10px 10px #b9bcbf;
     box-shadow: 0 0 10px 10px #b9bcbf;
-    margin-right:2em;
-    padding:20px;
-    margin-left:2em;
+    /* margin-right:0.8em; */
+    padding:1em;;
+    /* margin-left:0.8em; */
     margin-bottom:2em;
+
 }
 
 .lang {
-    margin-bottom:2em;
-    margin-left:2em;
-    margin-right:2em;
-    padding:20px;
+    /* margin-bottom:2em; */
+    /* margin-left:0.8em; */
+    /* margin-right:0.8em; */
+    padding:1em;
     /* width: 50%; */
     /* float:right; */
     /* margin-right:20px; */
@@ -130,30 +134,30 @@ footer {
     text-align:right;
     position: absolute;
     bottom:0;
-    right:8px;
+    right:2em;
     height:20px;
     width:100%;
     font-size:0.8em;
     clear:both;
 }
-.rndbutton {
-    font-size: 80%;
-    margin-right:12px;
-}
-.rndbuttonlbl {
-    font-size:80%;
-    margin-left:12px;
-    margin-right:4px;
-    margin-bottom:0.4em;
+/* .rndbutton { */
+/*     font-size: 80%; */
+/*     margin-right:12px; */
+/* } */
+/* .rndbuttonlbl { */
+/*     font-size:80%; */
+/*     margin-left:12px; */
+/*     margin-right:4px; */
+/*     margin-bottom:0.4em; */
     
-}
-.savebuttons {
-    margin-left:1em;
-}
-.savebuttons > button {
-    margin-top:1em;
-    margin-left:2em;
-}
+/* } */
+/* .savebuttons { */
+/*     margin-left:1em; */
+/* } */
+/* .savebuttons > button { */
+/*     margin-top:1em; */
+/*     margin-left:2em; */
+/* } */
 .adjbackground {
     line-height:80%;
 }
