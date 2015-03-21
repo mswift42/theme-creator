@@ -9,6 +9,13 @@
            <span ng-style="{color:faces.deffacefg}">faces []</span><span ng-style="{color:faces.typeface}">face</span>
 <span ng-style="{color: faces.deffacefg}">}</span>
 
+<span ng-style="{color: faces.commentface}">// darken - return a darker variant of a supplied color.</span>
+<span ng-style="{color:faces.keywordface}">func </span><span ng-style="{color:faces.functionnameface}">darken</span><span ng-style="{color:faces.deffacefg}">(col </span><span ng-style="{color:faces.typeface}">colorful.Color</span><span ng-style="{color:faces.deffacefg}">, factor </span><span ng-style="{color:faces.typeface}">float64</span><span ng-style="{color:faces.deffacefg}">) </span><span ng-style="{color:faces.typeface}">string</span>
+<span ng-style="{color:faces.deffacefg}">{</span>
+        <span ng-style="{color:faces.deffacefg}">black, _ := colorful.</span><span ng-style="{color:faces.functionnameface}">Hex</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.stringface}">"#000000"</span><span ng-style="{color:faces.deffacefg}">)</span>
+        <span ng-style="{color:faces.keywordface}">return </span><span ng-style="{color:faces.deffacefg}">col.</span><span ng-style="{color:faces.functionnameface}">BlendLab</span><span ng-style="{color:faces.deffacefg}">(black, factor).</span><span ng-style="{color:faces.functionnameface}">Hex</span><ng-style="{color:faces.deffacefg}">()
+<span ng-style="{color:faces.deffacefg}">}</span>
+
 <span ng-style ="{color: faces.keywordface}">func </span><span ng-style="{color: faces.functionnameface}">add</span><span ng-style="{color:faces.deffacefg}">(x, y </span><span ng-style="{color: faces.typeface}">int</span><span ng-style="{color:faces.deffacefg}">) </span><span ng-style="{color: faces.typeface}">int </span><span ng-style="{color:faces.deffacefg}">{</span>
         <span ng-style="{color: faces.keywordface}">return </span><span ng-style="{color:faces.deffacefg}">x + y </span><span ng-style="{color:faces.commentface}">// complicated math</span>
 <span ng-style="{color:faces.deffacefg}">}</span>
