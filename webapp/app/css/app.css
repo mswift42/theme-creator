@@ -168,3 +168,6 @@ footer {
 .row > label {
     /* font-size:80%; */
 }
+code {
+    font-family:monospace;
+}
