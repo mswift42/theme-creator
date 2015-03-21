@@ -9,30 +9,38 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
 
-        var initialfaces = function () {
+        var initialfaces = function (item) {
             var faces = 
-        {
+                    {
                         deffacefg : "#303030", deffacebg : "#ffffff",
-            keywordface : "#000000", builtinface : "#000000",
-            stringface : "#000000", functionnameface : "#000000",
-            typeface : "#000000", constantface : "#000000",
-            variableface : "#000000", warningface : "#ff0000",
-            commentface : "#606060"
-        };
+                        keywordface : "#000000", builtinface : "#000000",
+                        stringface : "#000000", functionnameface : "#000000",
+                        typeface : "#000000", constantface : "#000000",
+                        variableface : "#000000", warningface : "#ff0000",
+                        commentface : "#606060"
+                    };
             return faces;
         };
 
 
-
+        // if faces are not stored in localStorage
+        // set $scope.faces to initialfaces.
         $scope.faces = lstorage.loadFaces() || initialfaces();
+        
+        // store faces in localStorage.
+        $scope.saveTheme = function() {
+            lstorage.setFaces($scope.faces);
+        };
 
+        // delete localStorage key, set $scope.faces to initialfaces.
         $scope.resetTheme = function () {
             lstorage.deleteKey();
             $scope.faces = initialfaces();
 
         };
 
-
+        // setRandomFaces - helper function for ajax calls
+        // to ranomColor handlers.
         $scope.setRandomFaces = function(data) {
             $scope.faces.keywordface = data.randkey;
             $scope.faces.builtinface= data.randbuiltin;
@@ -64,17 +72,14 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                     $scope.setRandomFaces(data);
                 });
         };
-        $scope.saveTheme = function() {
-            lstorage.setFaces($scope.faces);
-        };
-
+        // darkBg - return True if supplied color is dark.
         $scope.darkBg = function(color) {
             return chroma(color).luminance() <=0.5;
         };
 
         $scope.facenames = ["deffacefg","commentface","keywordface",
-                                 "builtinface","stringface","functionnameface",
-                         "typeface","constantface","variableface"];
+                            "builtinface","stringface","functionnameface",
+                            "typeface","constantface","variableface"];
         $scope.decContrast = function() {
             if ($scope.darkBg($scope.faces.deffacebg)) {
                 if ($scope.adjustbg) {
@@ -110,6 +115,6 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                 for (i=0;i<$scope.facenames.length;i++) {
                     $scope.faces[$scope.facenames[i]] = chroma($scope.faces[$scope.facenames[i]]).darken(1).hex();
                 }
-                                                       }
+            }
         };
     }]);
