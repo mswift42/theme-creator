@@ -7,4 +7,30 @@
     <span ng-style="{color:faces.keywordface}">return function(</span><span ng-style="{color:faces.variableface}">text</span><span ng-style="{color:faces.deffacefg}">) {</span>
       <span ng-style="{color:faces.keywordface}">return </span><span ng-style="{color:faces.deffacefg}">String(text).replace(</span><span ng-style="{color:faces.stringface}">/\%VERSION\%/</span><span ng-style="{color:faces.deffacefg}">mg, version);</span>
     <span ng-style="{color:faces.deffacefg}">};</span>
-  <span ng-style="{color:faces.deffacefg}">}]);</span></code></pre>
+  <span ng-style="{color:faces.deffacefg}">}]);</span>
+
+<span ng-style="{color:faces.commentface}">// Sieve of Eratosthenes</span>
+<span ng-style="{color:faces.keywordface}">function </span><span ng-style="{color:faces.functionnameface}">eratosthenes</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.constantface}">limit</span><span ng-style="{color:faces.deffacefg}">) {</span>
+  <span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">primes </span><span ng-style="{color:faces.deffacefg}">= [];</span>
+  <span ng-style="{color:faces.keywordface}">if </span><span ng-style="{color:faces.deffacefg}">(limit >= 2) {</span>
+    <span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">sqrtlmt </span><span ng-style="{color:faces.deffacefg}">= Math.</span><span ng-style="{color:faces.builtinface}"><span ng-style="{color:faces.deffacefg}">(limit) - 2;</span>
+    <span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">nums </span><span ng-style="{color:faces.deffacefg}">= </span><span ng-style="{color:faces.keywordface}">new </span><span ng-style="{color:faces.deffacefg}">Array();
+    <span ng-style="{color:faces.keywordface}">for </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">i </span><span ng-style="{color:faces.deffacefg}">= 2; i <= limit; i++)</span>
+      <span ng-style="{color:faces.deffacefg}">nums.push(i);</span>
+
+    <span ng-style="{color:faces.keywordface}">for </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">i </span><span ng-style="{color:faces.deffacefg}">= 0; i <= sqrtlmt; i++) {</span>
+      <span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">p </span><span ng-style="{color:faces.deffacefg}">= nums[i];</span>
+      <span ng-style="{color:faces.keywordface}">if </span><span ng-style="{color:faces.deffacefg}">(p)</span>
+        <span ng-style="{color:faces.keywordface}">for </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">j </span><span ng-style="{color:faces.deffacefg}">= p * p - 2; j < nums.length; j += p)</span>
+          <span ng-style="{color:faces.deffacefg}">nums[j] = 0;</span>
+    <span ng-style="{color:faces.deffacefg}">}</span>
+    <span ng-style="{color:faces.keywordface}">for </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">i </span><span ng-style="{color:faces.deffacefg}">= 0;i < nums.length; i++) {</span>
+      <span ng-style="{color:faces.keywordface}">var </span><span ng-style="{color:faces.variableface}">p </span><span ng-style="{color:faces.deffacefg}">= nums[i];</span>
+      <span ng-style="{color:faces.keywordface}">if </span><span ng-style="{color:faces.deffacefg}">(p)</span>
+        <span ng-style="{color:faces.deffacefg}">primes.push(p);</span>
+    <span ng-style="{color:faces.deffacefg}">}</span>
+  <span ng-style="{color:faces.deffacefg}">}</span>
+  <span ng-style="{color:faces.keywordface}">return </span><span ng-style="{color:faces.deffacefg}">primes;</span>
+<span ng-style="{color:faces.deffacefg}">}</span>
+    
+</code></pre>
