@@ -43,10 +43,10 @@ warningface, because usually those vary strongly from the other faces.
 Save for later:
 ---------------
 
-If you want to save your progress, you can click the 'Save for later' button. This
+If you want to save your progress, you can click the 'Save' button. This
 will store your selected faces to localStorage amd restore them if you revisit the site.
 
-Clicking on 'reset theme' will set all faces to the original preset.
+Clicking on 'reset theme' will set all faces to the original preset and delete the localStorage key.
 
 
 Applying a new theme
