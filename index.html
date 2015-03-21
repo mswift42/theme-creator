@@ -1,44 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>emacs-theme-creator by mswift42</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>emacs-theme-creator by mswift42</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
+    <header>
+      <div class="inner">
         <h1>emacs-theme-creator</h1>
-        <p>create emacs 24 themes.</p>
-        <p class="view"><a href="https://github.com/mswift42/theme-creator">View the Project on GitHub <small>mswift42/theme-creator</small></a></p>
-        <ul>
-          <li><a href="https://github.com/mswift42/theme-creator/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mswift42/theme-creator/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mswift42/theme-creator">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="emacs-theme-creator" class="anchor" href="#emacs-theme-creator"><span class="octicon octicon-link"></span></a>emacs-theme-creator</h1>
+        <h2>create emacs 24 themes.</h2>
+        <a href="https://github.com/mswift42/theme-creator" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="emacs-theme-creator" class="anchor" href="#emacs-theme-creator" aria-hidden="true"><span class="octicon octicon-link"></span></a>emacs-theme-creator</h1>
 
 <p>create emacs 24 themes.</p>
 
 <h2>
-<a name="installation-instructions" class="anchor" href="#installation-instructions"><span class="octicon octicon-link"></span></a>Installation Instructions:</h2>
+<a id="installation-instructions" class="anchor" href="#installation-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation Instructions:</h2>
 
 <p>No installation necessary. Emacs Theme Creator runs on Appengine, using Go and a bit of AngularJS.</p>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage:</h2>
 
 <p>Create a new directory for your theme to live in.</p>
 
@@ -62,7 +63,7 @@
 <p>Select all: <kbd>C-a</kbd>, copy: <kbd>C-c</kbd>, and save in your earlier created file.</p>
 
 <h2>
-<a name="random-faces" class="anchor" href="#random-faces"><span class="octicon octicon-link"></span></a>Random Faces:</h2>
+<a id="random-faces" class="anchor" href="#random-faces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random Faces:</h2>
 
 <p>You can get random colors from go-colorful's 3 different color palettes, i.e.
 WarmPalette, SoftPalette and HappyPalette by pressing the corresponding button.
@@ -70,7 +71,7 @@ WarmPalette, SoftPalette and HappyPalette by pressing the corresponding button.
 warningface, because usually those vary strongly from the other faces.</p>
 
 <h2>
-<a name="applying-a-new-theme" class="anchor" href="#applying-a-new-theme"><span class="octicon octicon-link"></span></a>Applying a new theme</h2>
+<a id="applying-a-new-theme" class="anchor" href="#applying-a-new-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Applying a new theme</h2>
 
 <p>Disable the theme you are using at present.</p>
 
@@ -83,7 +84,7 @@ warningface, because usually those vary strongly from the other faces.</p>
 </code></pre>
 
 <h2>
-<a name="customize-the-theme" class="anchor" href="#customize-the-theme"><span class="octicon octicon-link"></span></a>Customize the theme</h2>
+<a id="customize-the-theme" class="anchor" href="#customize-the-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customize the theme</h2>
 
 <p>Visit your new theme.</p>
 
@@ -102,12 +103,12 @@ warningface, because usually those vary strongly from the other faces.</p>
 </code></pre>
 
 <h2>
-<a name="used-libraries" class="anchor" href="#used-libraries"><span class="octicon octicon-link"></span></a>Used Libraries</h2>
+<a id="used-libraries" class="anchor" href="#used-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Used Libraries</h2>
 
 <p>Emacs-theme-creator uses Go, <a href="https://angularjs.org/">AngularJS</a>, in particular <a href="https://github.com/angular/angular-seed">angular-seed</a>, for the live preview of the selected faces and  <a href="https://github.com/lucasb-eyer/go-colorful">go-colorful</a> for calculating darker and lighter variants of selected as well as the random palettes of warm, happy and soft colors.</p>
 
 <h2>
-<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h2>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshots</h2>
 
 <p>picking faces:</p>
 
@@ -122,25 +123,39 @@ warningface, because usually those vary strongly from the other faces.</p>
 <p><img src="https://github.com/mswift42/theme-creator/raw/master/screen3.png" alt="Screenshot"></p>
 
 <h2>
-<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO:</h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO:</h2>
 
 <ul>
 <li><p>Add more preview languages.</p></li>
 <li><p>Add support for more modes.</p></li>
 <li><p>Add slider to increase / decrease contrast.</p></li>
-</ul><h2>
-<a name="donate" class="anchor" href="#donate"><span class="octicon octicon-link"></span></a>Donate:</h2>
+</ul>
+
+<h2>
+<a id="donate" class="anchor" href="#donate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Donate:</h2>
 
 <p>Every little helps:</p>
 
 <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=5823VL6B3XM86" title="Donate once-off to this project using Paypal"><img src="http://img.shields.io/paypal/donate.png?color=yellow" alt="PayPayl donate button"></a></p>
-      </section>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mswift42/theme-creator/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mswift42/theme-creator/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mswift42/theme-creator"></a> is maintained by <a href="https://github.com/mswift42">mswift42</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/mswift42">mswift42</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+  
   </body>
 </html>
