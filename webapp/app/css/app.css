@@ -171,3 +171,18 @@ footer {
 code {
     font-family:monospace;
 }
+
+.checkbox-inline {
+    font-size:80%;
+}
+#adjbg {
+    font-size:85%;
+    text-align:center;
+    margin-top:0.2em;
+    vertical-align:bottom;
+}
+
+#adjbg > label {
+    height:auto;
+    margin:auto;
+}

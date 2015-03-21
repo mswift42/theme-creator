@@ -81,8 +81,9 @@
 
             <button type="button" class="btn col-xs-3"ng-click="decContrast()">Red. Contrast</button>
             <button type="button" class="btn col-xs-3" ng-click="incContrast()">Inc. Contrast</button>
-            <p class="col-xs-2">Adjust Background</p>
-            <input type="checkbox" class="col-xs-1 pull-right" ng-model="adjustbg" name="adjbg"/>
+            <label class="col-xs-4 checkbox-inline" id="adjbg">
+              <input type="checkbox" class="" ng-model="adjustbg" name="adjbg"/>Adjust BG
+            </label>
           </div>
           <div class="colors row">
             <button class="btn col-xs-3 col-xs-offset-1" name="sb"  type="submit" value="Done">Done</button>
