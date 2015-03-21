@@ -86,11 +86,9 @@ Emacs-theme-creator uses Go, [AngularJS](https://angularjs.org/), in particular 
 Screenshots
 -----------
 
-picking faces:
 
 ![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen1.png)
 
-get random colors:
 
 ![Screenshot](https://github.com/mswift42/theme-creator/raw/master/screen2.png)
 
