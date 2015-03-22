@@ -1,5 +1,6 @@
 <div class="themeprev" ng-style="{'background-color': faces.deffacebg}">
-   <div class="animate-switch-container"
+  <div class="animate-switch-container"
+       ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"
     ng-switch on="prevlang">
      <div class="animate-switch" ng-switch-when="python">
        <div python-view></div>
