@@ -85,6 +85,30 @@ describe('controllers', function(){
            scope.resetTheme();
            expect(localStorage.getItem('mswift42themecreator')).toBe(null);
        }));
+    it('presetTheme should return the correct faces form warm night',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           expect(scope.presettheme).toBe('preset');
+           scope.presettheme = "warmnight";
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#b1b1b1');
+           expect(scope.faces.keywordface).toBe('#96905f');
+           expect(scope.faces.deffacebg).toBe('#292424');
+       }));
+    it('presetTheme should return the correct faces for oldlace',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           expect(scope.presettheme).toBe('preset');
+           scope.presettheme = 'oldlace';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#525252');
+           expect(scope.faces.deffacebg).toBe('#fdf5e6');
+           expect(scope.faces.typeface).toBe('#634575');
+       }));
                                        
 
 
