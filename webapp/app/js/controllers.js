@@ -4,10 +4,11 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['colorpicker.module'])
-    .controller('Cpick', ['$scope','$http','lstorage',function($scope,$http,lstorage) {
+    .controller('Cpick', ['$scope','$http','lstorage', 'presets', function($scope,$http,lstorage,presets) {
         $scope.languages = ["ruby","go","python","haskell","javascript"];
         $scope.prevlang = "ruby";
         $scope.adjustbg = false;
+        $scope.presettheme = "preset";
 
         var initialfaces = function (item) {
             var faces = 
@@ -20,6 +21,22 @@ angular.module('myApp.controllers', ['colorpicker.module'])
                         commentface : "#606060"
                     };
             return faces;
+        };
+        $scope.changePreset = function() {
+            var newtheme = $scope.presettheme;
+            switch (newtheme) {
+            case "warmnight":
+                $scope.faces = presets.warmnight();
+                break;
+            case "oldlace":
+                $scope.faces = presets.oldlace();
+                break;
+            case "lightsoap":
+                $scope.faces = presets.lightsoap();
+                break;
+            default:
+                $scope.faces = initialfaces();
+            }
         };
 
 
