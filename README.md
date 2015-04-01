@@ -48,6 +48,11 @@ will store your selected faces to localStorage amd restore them if you revisit t
 
 Clicking on 'reset theme' will set all faces to the original preset and delete the localStorage key.
 
+Presets:
+--------
+
+To see some themes in action, you can pick one of the preloaded themes.
+
 
 Applying a new theme
 --------------------
