@@ -55,6 +55,17 @@ angular.module('myApp.services')
                 commentface : "#a1a1a1"
             };
         };
+        presetService.greymatters = function() {
+            return {
+                                deffacefg : "#2f2f2f", deffacebg : "#eaecee",
+                keywordface : "#546789", builtinface : "#7b4135",
+                        stringface : "#305f5e", functionnameface : "#714355",
+                        typeface : "#634575", constantface : "#64502f",
+                        variableface : "#3f5b32", warningface : "#fa0c0c",
+                commentface : "#949494"
+            };
+        };
+                
         return presetService;
     
     });
