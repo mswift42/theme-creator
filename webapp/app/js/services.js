@@ -30,7 +30,7 @@ angular.module('myApp.services')
         presetService.warmnight = function () {
             return {deffacefg : "#b1b1b1", deffacebg : "#292424",
                         keywordface : "#96905f", builtinface : "#71a46c",
-                        stringface : "#71a19", functionnameface : "#b680b1",
+                        stringface : "#71a19f", functionnameface : "#b680b1",
                         typeface : "#8b8fc6", constantface : "#bd845f",
                         variableface : "#c27d7b", warningface : "#e81050",
                     commentface : "#5d5a58"
