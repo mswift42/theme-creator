@@ -3,8 +3,6 @@
 /* Services */
 
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
 angular.module('myApp.services',[])
     .factory('lstorage', function() {
         
@@ -23,8 +21,10 @@ angular.module('myApp.services',[])
             localStorage.removeItem(storageService.name);
         };
         return storageService;
-    })
-    .factory('presets', function() {
+    });
+angular.module('myApp.services')
+    .factory('presets',function() {
+    // .factory('presets', function() {
 
         var presetService = {};
         presetService.warmnight = function () {
@@ -56,4 +56,5 @@ angular.module('myApp.services',[])
             };
         };
         return presetService;
+    
     });
