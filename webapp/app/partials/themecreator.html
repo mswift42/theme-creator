@@ -96,8 +96,14 @@
     </div>
 
     <div class="lang col-md-6  col-lg-6 col-lg-offset-1" ng-style="{'background-color':faces.deffacebg}">
-      <div class="sellang">
-        <select ng-model="prevlang" ng-options="language for language in languages">
+      <div class="sellang" >
+        <select  class="selects" ng-model="prevlang" ng-options="language for language in languages" ng-style="{color:faces.deffacefg}">
+        </select>
+        <select class="selects" ng-model="presettheme"  ng-change="changePreset()" ng-style="{color:faces.deffacefg}">
+          <option value="preset" >preset</option>
+          <option value="warmnight">warm-night</option>
+          <option value="oldlace">oldlace</option>
+          <option value="lightsoap">light-soap</option>
         </select>
       </div>
       <div theme-preview></div>
