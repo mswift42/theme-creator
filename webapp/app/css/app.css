@@ -200,3 +200,7 @@ code {
 .animate-enter.animate-enter-active {
 	opacity: 1;
 }
+.selects {
+    background:transparent;
+    margin-right:2em;
+}
