@@ -27,7 +27,7 @@ angular.module('myApp.services',[])
     .factory('presets', function() {
 
         var presetService = {};
-        presetService.warmNight = function () {
+        presetService.warmnight = function () {
             return {deffacefg : "#b1b1b1", deffacebg : "#292424",
                         keywordface : "#96905f", builtinface : "#71a46c",
                         stringface : "#71a19", functionnameface : "#b680b1",
@@ -45,5 +45,15 @@ angular.module('myApp.services',[])
                     commentface : "#949494"
                    };
         };
-        presetService.
+        presetService.lightsoap = function() {
+            return {
+                deffacefg : "#474747", deffacebg : "#fafad4",
+                keywordface : "#4f4b78", builtinface : "#365f71",
+                        stringface : "#355d3e", functionnameface : "#86546c",
+                        typeface : "#5a532d", constantface : "#794732",
+                        variableface : "#5f3041", warningface : "#f70f2a",
+                commentface : "#a1a1a1"
+            };
+        };
+        return presetService;
     });
