@@ -80,10 +80,12 @@ describe('controllers', function(){
            var scope = $rootScope.$new();
            var Cpick = $controller('Cpick',{$scope:scope});
            scope.$digest();
+           scope.faces.deffacebg = '#123456';
            scope.saveTheme();
            expect(localStorage.getItem('mswift42themecreator')).toBeDefined();
            scope.resetTheme();
            expect(localStorage.getItem('mswift42themecreator')).toBe(null);
+           expect(scope.faces.deffacebg).toBe('#ffffff');
        }));
     it('presetTheme should return the correct faces form warm night',
        inject(function($controller, $rootScope) {
@@ -109,10 +111,16 @@ describe('controllers', function(){
            expect(scope.faces.deffacebg).toBe('#fdf5e6');
            expect(scope.faces.typeface).toBe('#634575');
        }));
-                                       
-
-
-
-
-
+    it('presettheme should return the correct faces for lightsoap',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           expect(scope.presettheme).toBe('preset');
+           scope.presettheme = 'lightsoap';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#474747');
+           expect(scope.faces.deffacebg).toBe('#fafad4');
+           expect(scope.faces.functionnameface).toBe('#86546c');
+       }));
 });
