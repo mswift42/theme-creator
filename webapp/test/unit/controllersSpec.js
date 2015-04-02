@@ -123,4 +123,15 @@ describe('controllers', function(){
            expect(scope.faces.deffacebg).toBe('#fafad4');
            expect(scope.faces.functionnameface).toBe('#86546c');
        }));
+    it('presettheme should return the correct faces for soft-charcoal',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           scope.presettheme = 'softcharcoal';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#c2c2c2');
+           expect(scope.faces.deffacebg).toBe('#191919');
+           expect(scope.faces.typeface).toBe('#8aa6c1');
+       }));
 });
