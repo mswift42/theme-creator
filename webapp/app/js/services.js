@@ -65,6 +65,16 @@ angular.module('myApp.services')
                 commentface : "#949494"
             };
         };
+        presetService.softcharcoal = function() {
+            return {
+                                deffacefg : "#c2c2c2", deffacebg : "#191919",
+                keywordface : "#8aa234", builtinface : "#54686d",
+                        stringface : "#5d90cd", functionnameface : "#7a8bbd",
+                        typeface : "#8aa6c1", constantface : "#8aa6c1",
+                        variableface : "#8885b2", warningface : "#ff6523",
+                commentface : "#808080"
+            };
+        };
                 
         return presetService;
     
