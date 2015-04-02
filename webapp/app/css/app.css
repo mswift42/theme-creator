@@ -203,4 +203,9 @@ code {
 .selects {
     background:transparent;
     margin-right:2em;
+    padding:0.3em;
+ }
+
+.sellang {
+    margin-bottom:1em;
 }
