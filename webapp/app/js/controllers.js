@@ -37,6 +37,9 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             case "greymatters":
                 $scope.faces = presets.greymatters();
                 break;
+            case "softcharcoal":
+                $scope.faces = presets.softcharcoal();
+                break;
             default:
                 $scope.faces = initialfaces();
             }
