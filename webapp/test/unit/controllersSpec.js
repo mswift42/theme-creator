@@ -134,4 +134,29 @@ describe('controllers', function(){
            expect(scope.faces.deffacebg).toBe('#191919');
            expect(scope.faces.typeface).toBe('#8aa6c1');
        }));
+    it('presettheme should return the correct faces for soft-morning',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           scope.presettheme = 'softmorning';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#282828');
+           expect(scope.faces.deffacebg).toBe('#f2f1f0');
+           expect(scope.faces.keywordface).toBe('#8aa234');
+           expect(scope.faces.functionnameface).toBe('#a82e4d');
+       }));
+    it('presettheme should return the correct faces for soft-stone',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           scope.presettheme = 'softstone';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#000000');
+           expect(scope.faces.deffacebg).toBe('#efece3');
+           expect(scope.faces.keywordface).toBe('#490026');
+           expect(scope.faces.builtinface).toBe('#9e0045');
+           expect(scope.faces.typeface).toBe('#014500');
+       }));
 });
