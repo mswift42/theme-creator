@@ -75,6 +75,26 @@ angular.module('myApp.services')
                 commentface : "#808080"
             };
         };
+        presetService.softmorning = function() {
+                        return {
+                                deffacefg : "#282828", deffacebg : "#f2f1f0",
+                keywordface : "#8aa234", builtinface : "#727170",
+                        stringface : "#3450a2", functionnameface : "#a82e4d",
+                        typeface : "#727170", constantface : "#f03f3f",
+                        variableface : "#f03f3f", warningface : "#ff6523",
+                commentface : "#808080"
+                        };
+        };
+        presetService.softstone = function() {
+                          return {
+                                deffacefg : "#000000", deffacebg : "#efece3",
+                keywordface : "#490026", builtinface : "#9e0045",
+                        stringface : "#0f126e", functionnameface : "#340557",
+                        typeface : "#014500", constantface : "#374014",
+                        variableface : "#014500", warningface : "#ff6523",
+                commentface : "#373737"
+                          };
+        };
                 
         return presetService;
     
