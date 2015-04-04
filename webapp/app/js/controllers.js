@@ -40,6 +40,12 @@ angular.module('myApp.controllers', ['colorpicker.module'])
             case "softcharcoal":
                 $scope.faces = presets.softcharcoal();
                 break;
+            case "softmorning":
+                $scope.faces = presets.softmorning();
+                break;
+            case "softstone":
+                $scope.faces = presets.softstone();
+                break;
             default:
                 $scope.faces = initialfaces();
             }
