@@ -128,7 +128,7 @@
         `(js2-function-param ((,class (:foreground ,const))))
         `(js2-jsdoc-value ((,class (:foreground ,str))))
         `(js2-private-member ((,class (:foreground ,fg3))))
-        `(js3-warning-face ((,class (:underline ,key))))
+        `(js3-warning-face ((,class (:underline ,keyword))))
         `(js3-error-face ((,class (:underline ,warning))))
         `(js3-external-variable-face ((,class (:foreground ,var))))
         `(js3-function-param-face ((,class (:foreground ,key3))))
