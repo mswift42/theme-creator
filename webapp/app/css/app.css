@@ -12,7 +12,8 @@ body {
 
 }
 pre {
-    font-size:105%;
+    font-size:120%;
+    font-family:monospace !important;
 }
 
 
@@ -71,22 +72,21 @@ pre {
     /* margin-bottom:2em; */
     /* margin-left:0.8em; */
     /* margin-right:0.8em; */
-    padding:1em;
+    padding:2em;
+
     /* width: 50%; */
     /* float:right; */
     /* margin-right:20px; */
     /* margin-top:20px; */
     /* background-color: white; */
     border: .2em solid #dadada;
+    
     /* -moz-box-shadow: 0 0 10px 10px #b9bcbf; */
     /* -webkit-box-shadow: 0 0 10px 10px #b9bcbf; */
     /* -icab-box-shadow: 0 0 10px 10px #b9bcbf; */
     /* -o-box-shadow: 0 0 10px 10px #b9bcbf; */
     /* box-shadow: 0 0 10px 10px #b9bcbf; */
 
-}
-.lang span {
-    font-size:120%;
 }
 .sellang {
     padding:22px;
@@ -172,6 +172,7 @@ footer {
 }
 code {
     font-family:monospace;
+    font-size:110%;
 }
 
 .checkbox-inline {
@@ -210,6 +211,7 @@ code {
 
 .sellang {
     margin-bottom:1em;
+
 }
 .navbar-brand {
     color:#fafafa !important;
