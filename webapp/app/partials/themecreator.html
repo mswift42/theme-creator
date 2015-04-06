@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="themecreator row ">
-    <div class="faceselection col-md-4 col-lg-3 col-lg-offset-1">
+  <div class="themecreator row">
+    <div class="faceselection col-md-4 col-lg-3">
       <form role="form" action="/savetheme"  method="post">
         <div class="colors row">
           <label class="col-md-4"for="themename">Theme name</label>
@@ -95,7 +95,7 @@
         </div>
     </div>
 
-    <div class="lang col-md-6  col-lg-6 col-lg-offset-1" ng-style="{'background-color':faces.deffacebg}">
+    <div class="lang col-md-6  col-lg-offset-1 col-lg-8" ng-style="{'background-color':faces.deffacebg}">
       <div class="sellang" >
         <select  class="selects" ng-model="prevlang" ng-options="language for language in languages" ng-style="{color:faces.deffacefg}">
         </select>
