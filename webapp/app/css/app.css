@@ -5,7 +5,7 @@ html {
 }
 body {
     margin: 0 0 20px;
-    background-color:#e7e9eb;
+    background-color:#efefef;
     overflow:auto;
     padding-bottom:2em;
     color:#333;
@@ -52,17 +52,17 @@ pre {
 
 
 .faceselection {
-    background-color:white;
-    border-left: .2em solid #b9bcbf;
-    border-right: .2em solid #b9bcbf;
-    -moz-box-shadow: 0 0 10px 10px #b9bcbf;
-    -webkit-box-shadow: 0 0 10px 10px #b9bcbf;
-    -icab-box-shadow: 0 0 10px 10px #b9bcbf;
-    -o-box-shadow: 0 0 10px 10px #b9bcbf;
-    box-shadow: 0 0 10px 10px #b9bcbf;
+    background-color:#fffafa;
+    border: 0.2em solid #dadada;
+
+    /* -moz-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -webkit-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -icab-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -o-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* box-shadow: 0 0 10px 10px #b9bcbf; */
     /* margin-right:0.8em; */
-    padding:1em;;
-    /* margin-left:0.8em; */
+    padding:1em;
+    /* margin-lefpt:0.8em; */
     margin-bottom:2em;
 
 }
@@ -76,15 +76,17 @@ pre {
     /* float:right; */
     /* margin-right:20px; */
     /* margin-top:20px; */
-    background-color: white;
-    border-left: .2em solid #b9bcbf;
-    border-right: .2em solid #b9bcbf;
-    -moz-box-shadow: 0 0 10px 10px #b9bcbf;
-    -webkit-box-shadow: 0 0 10px 10px #b9bcbf;
-    -icab-box-shadow: 0 0 10px 10px #b9bcbf;
-    -o-box-shadow: 0 0 10px 10px #b9bcbf;
-    box-shadow: 0 0 10px 10px #b9bcbf;
+    /* background-color: white; */
+    border: .2em solid #dadada;
+    /* -moz-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -webkit-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -icab-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* -o-box-shadow: 0 0 10px 10px #b9bcbf; */
+    /* box-shadow: 0 0 10px 10px #b9bcbf; */
 
+}
+.lang span {
+    font-size:120%;
 }
 .sellang {
     padding:22px;
