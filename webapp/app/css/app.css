@@ -211,3 +211,7 @@ code {
 .sellang {
     margin-bottom:1em;
 }
+.navbar-brand {
+    color:#fafafa !important;
+    font-size:2em;
+}
