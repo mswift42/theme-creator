@@ -159,4 +159,16 @@ describe('controllers', function(){
            expect(scope.faces.builtinface).toBe('#9e0045');
            expect(scope.faces.typeface).toBe('#014500');
        }));
+    it('presettheme should return the correct faces for greymatters',
+       inject(function($controller, $rootScope) {
+           var scope = $rootScope.$new();
+           var Cpick = $controller('Cpick', {$scope:scope});
+           scope.$digest();
+           scope.presettheme = 'greymatters';
+           scope.changePreset();
+           expect(scope.faces.deffacefg).toBe('#2f2f2f');
+           expect(scope.faces.deffacebg).toBe('#f9fbfd');
+           expect(scope.faces.keywordface).toBe('#3f567b');
+           expect(scope.faces.builtinface).toBe('#7b4135');
+       }));
 });
