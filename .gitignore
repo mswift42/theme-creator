@@ -7,3 +7,4 @@
 /webapp/.travis.yml
 /webapp/app/index-async.html
 /webapp/app/js/.tern-port
+*~
