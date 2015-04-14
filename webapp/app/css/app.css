@@ -215,8 +215,45 @@ code {
 }
 .navbar-brand {
     color:#fafafa !important;
-    font-size:2em;
+    font-size:2.0em;
 }
 .navbar-inverse {
     background-color:#373535;
+}
+.jumbotron {
+    background-color:#fafafa;
+    margin-top:12vh;
+}
+@media screen and (max-width: 768px) {
+    .row {
+        position: relative;
+    }
+
+    .navbar-header {
+        left: 0;
+        position: absolute;
+        top: 2;
+    }
+
+    .navbar-brand {
+        float: none;
+        box-sizing: border-box;
+        height: 50px;
+        font-size:1em;
+        padding: 14px 50px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-left {
+        margin: 0;
+        position: absolute;
+        left: 12em;
+        top: 0;
+    }
+
+    .navbar-left> li {
+        display: inline-block;
+        margin-top: 4px;
+    }
 }
