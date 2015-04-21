@@ -236,12 +236,13 @@ code {
     }
 
     .navbar-brand {
-        float: none;
+        float:none;
         box-sizing: border-box;
         height: 50px;
         font-size:1em;
-        padding: 14px 50px;
+        /* padding: 14px 50px; */
         text-align: center;
+        padding-top:49px;
         width: 100%;
     }
 
