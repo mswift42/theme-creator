@@ -1,6 +1,8 @@
 [emacs-theme-creator](http://mswift42.github.io/theme-creator)
 =============
 
+![Screenshot](https://github.com/mswift42/theme-creator/raw/master/soft-charcoal1.png)
+
 create emacs 24 themes.
 
 Installation Instructions:
