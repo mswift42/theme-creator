@@ -1,4 +1,5 @@
 'use strict';
+/* global localStorage */
 
 /* Services */
 
@@ -9,7 +10,7 @@ angular.module('myApp.services',[])
         var storageService = {};
         storageService.name = 'mswift42themecreator';
         storageService.containsKey = function() {
-            return localStorage.getItem(storageService.name) != null;
+            return localStorage.getItem(storageService.name) !== null;
         };
         storageService.loadFaces = function() {
             return JSON.parse(localStorage.getItem(storageService.name));
