@@ -96,6 +96,16 @@ angular.module('myApp.services')
                 commentface : "#373737"
                           };
         };
+        presetService.whitesand = function() {
+            return {
+                deffacefg: "#585858", deffacebg : "#f5ebe1",
+                keywordface : "#4a858c", builtinface : "#1a8591",
+                stringface: "#b3534b", functionnameface : "#bd745e",
+                typeface : "#8c4a79", constantface : "#697024",
+                variableface: "#476238", warningface : "#ff1276",
+                commentface : "#a9a9a9"
+            };
+        };
                 
         return presetService;
     
