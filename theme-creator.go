@@ -56,12 +56,7 @@ func addColors(colors map[string]string) map[string]string {
 	fg := colors["deffacefg"]
 	bg := colors["deffacebg"]
 	keyword := colors["keywordface"]
-	bg2 := ""
-	bg3 := ""
-	bg4 := ""
-	fg2 := ""
-	fg3 := ""
-	fg4 := ""
+	var bg2, bg3, bg4, fg2, fg3, fg4 string
 	fgcol, _ := colorful.Hex(fg)
 	bgcol, _ := colorful.Hex(bg)
 	keycol, _ := colorful.Hex(keyword)
