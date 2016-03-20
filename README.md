@@ -1,6 +1,12 @@
 [emacs-theme-creator](http://mswift42.github.io/theme-creator)
 =============
 
+Deprecation Notice
+==================
+
+For your further Emacs theming needs, please use [ThemeCreator](https://github.com/mswift42/themecreator), it's better in nearly every way.
+
+
 ![Screenshot](https://github.com/mswift42/theme-creator/raw/master/soft-charcoal1.png)
 
 create emacs 24 themes.
