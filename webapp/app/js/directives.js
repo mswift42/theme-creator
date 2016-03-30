@@ -21,6 +21,18 @@ angular.module('myApp.directives', []).
             templateUrl: 'partials/preview.html',
         };
     }).
+    directive('cView',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/c.html',
+        };
+    }).
+    directive('cppView',function() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'partials/cpp.html',
+        };
+    }).
     directive('pythonView',function() {
         return {
             restrict: 'EA',
