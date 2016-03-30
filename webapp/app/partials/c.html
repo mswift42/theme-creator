@@ -1,0 +1,33 @@
+<pre ng-style="{'background-color':faces.deffacebg, border: '0px'}"><code>
+<span ng-style="{color:faces.keywordface}">#include </span><span ng-style="{color:faces.deffacefg}">&lt;stdio.h&gt;</span>
+
+<span ng-style="{color:faces.commentface}">// The Fibonacci Function</span>
+<span ng-style="{color:faces.keywordface}">void </span><span ng-style="{color:faces.functionnameface}">print_fibonacci</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.typeface}">int </span><span ng-style="{color:faces.deffacefg}">num</span><span ng-style="{color:faces.deffacefg}">) </span><span ng-style="{color:faces.deffacefg}">{</span>
+<span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.deffacefg}">i, j, k, cnt;</span>
+      <span ng-style="{color:faces.deffacefg}">i = 0;</span>
+      <span ng-style="{color:faces.deffacefg}">j = 1;</span>
+      <span ng-style="{color:faces.deffacefg}">cnt = 2;</span>
+      <span ng-style="{color:faces.functionnameface}">printf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">"%d %d "</span><span ng-style="{color:faces.deffacefg}">, i, j);</span>
+      <span ng-style="{color:faces.deffacefg}">k = i + j;</span>
+      <span ng-style="{color:faces.keywordface}">while </span><span ng-style="{color:faces.deffacefg}">(cnt < num) {</span>
+            <span ng-style="{color:faces.functionnameface}">printf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">"%d "</span><span ng-style="{color:faces.deffacefg}">, k);</span>
+            <span ng-style="{color:faces.deffacefg}">i = j;</span>
+            <span ng-style="{color:faces.deffacefg}">j = k;</span>
+            <span ng-style="{color:faces.deffacefg}">k = i + j;</span>
+            <span ng-style="{color:faces.deffacefg}">cnt++;</span>
+      <span ng-style="{color:faces.deffacefg}">}</span>
+      <span ng-style="{color:faces.functionnameface}">printf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">"\n"</span><span ng-style="{color:faces.deffacefg}">);</span>
+      <span ng-style="{color:faces.keywordface}">return;</span>
+<span ng-style="{color:faces.deffacefg}">}</span>
+
+<span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.functionnameface}">main </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.typeface}">void</span><span ng-style="{color:faces.deffacefg}">)</span><span ng-style="{color:faces.deffacefg}">{</span>
+      <span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.deffacefg}">num;</span>
+      <span ng-style="{color:faces.functionnameface}">printf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">"Enter how many fibonacci numbers to print: "</span><span ng-style="{color:faces.deffacefg}">);</span>
+      <span ng-style="{color:faces.functionnameface}">scanf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">"%d"</span><span ng-style="{color:faces.deffacefg}">, &num);</span>
+<span ng-style="{color:faces.deffacefg}">LABEL:</span>      <span ng-style="{color:faces.keywordface}">if </span><span ng-style="{color:faces.deffacefg}">(num < 3) {</span>
+            <span ng-style="{color:faces.functionnameface}">printf</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">" please enter more than 2 \n"</span><span ng-style="{color:faces.deffacefg}">);</span>
+            <span ng-style="{color:faces.keywordface}">goto </span><span ng-style="{color:faces.deffacefg}">LABEL;</span>
+      <span ng-style="{color:faces.deffacefg}">}</span>
+      <span ng-style="{color:faces.functionnameface}">printf_fibonacci</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color: faces.stringface}">num</span><span ng-style="{color:faces.deffacefg}">);</span>
+      <span ng-style="{color:faces.keywordface}">return </span><span ng-style="{color:faces.deffacefg}">0;</span>
+<span ng-style="{color:faces.deffacefg}">}</span></code></pre>

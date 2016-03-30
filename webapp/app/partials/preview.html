@@ -2,6 +2,12 @@
   <div class="animate-switch-container"
        ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"
     ng-switch on="prevlang">
+     <div class="animate-switch" ng-switch-when="c">
+       <div c-view></div>
+     </div>
+     <div class="animate-switch" ng-switch-when="c++">
+       <div cpp-view></div>
+     </div>
      <div class="animate-switch" ng-switch-when="python">
        <div python-view></div>
      </div>

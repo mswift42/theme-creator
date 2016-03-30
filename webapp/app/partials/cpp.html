@@ -1,0 +1,30 @@
+<pre ng-style="{'background-color':faces.deffacebg, border: '0px'}"><code>
+<span ng-style="{color:faces.keywordface}">#include </span><span ng-style="{color:faces.deffacefg}">&lt;iostream&gt;</span>
+
+<span ng-style="{color:faces.commentface}">// The Fibonacci Function</span>
+<span ng-style="{color:faces.keywordface}">class </span><span ng-style="{color:faces.functionnameface}">fib</span>
+<span ng-style="{color:faces.deffacefg}">{</span>
+<span ng-style="{color:faces.keywordface}">public</span><span ng-style="{color:faces.deffacefg}">:</span>
+      <span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.deffacefg}">a, b, c;</span>
+      <span ng-style="{color:faces.keywordface}">void </span><span ng-style="{color:faces.deffacefg}">generator</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.typeface}">int</span><span ng-style="{color:faces.deffacefg}">);</span>
+<span ng-style="{color:faces.deffacefg}">};</span>
+
+<span ng-style="{color:faces.keywordface}">void </span><span ng-style="{color:faces.functionnameface}">fib::generator</span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.typeface}">int </span><span ng-style="{color:faces.deffacefg}">n) </span><span ng-style="{color:faces.deffacefg}">{</span>
+      <span ng-style="{color:faces.deffacefg}">a = 0;</span>
+      <span ng-style="{color:faces.deffacefg}">b = 1;</span>
+      <span ng-style="{color:faces.deffacefg}">cout &lt;&lt; a &lt;&lt; </span><span ng-style="{color: faces.stringface}">" "</span><span ng-style="{color:faces.deffacefg}"> &lt;&lt; b;</span>
+      <span ng-style="{color:faces.keywordface}">for </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.deffacefg}">i = 1; i <= n-2; i++) {</span>
+            <span ng-style="{color:faces.deffacefg}">c = a + b;</span>
+            <span ng-style="{color:faces.deffacefg}">cout &lt;&lt; </span><span ng-style="{color: faces.stringface}">" "</span><span ng-style="{color:faces.deffacefg}"> &lt;&lt; c;</span>
+            <span ng-style="{color:faces.deffacefg}">a = b;</span>
+            <span ng-style="{color:faces.deffacefg}">b = c;</span>
+      <span ng-style="{color:faces.deffacefg}">}</span>
+<span ng-style="{color:faces.deffacefg}">}</span>
+
+<span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.functionnameface}">main </span><span ng-style="{color:faces.deffacefg}">(</span><span ng-style="{color:faces.typeface}">void</span><span ng-style="{color:faces.deffacefg}">)</span><span ng-style="{color:faces.deffacefg}">{</span>
+      <span ng-style="{color:faces.keywordface}">int </span><span ng-style="{color:faces.deffacefg}">n;</span>
+      <span ng-style="{color:faces.deffacefg}">cout &lt;&lt; </span><span ng-style="{color: faces.stringface}">"Enter number of terms you need in the series: "</span><span ng-style="{color:faces.deffacefg}">;</span>
+      <span ng-style="{color:faces.deffacefg}">cout &gt;&gt; </span><span ng-style="{color:faces.deffacefg}">n;</span>
+      <span ng-style="{color:faces.deffacefg}">fib ob;</span>
+      <span ng-style="{color:faces.deffacefg}">ob.generator(n);</span>
+<span ng-style="{color:faces.deffacefg}">}</span></code></pre>

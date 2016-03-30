@@ -5,13 +5,13 @@
 
 angular.module('myApp.controllers', ['colorpicker.module'])
     .controller('Cpick', ['$scope','$http','lstorage', 'presets', function($scope,$http,lstorage,presets) {
-        $scope.languages = ["ruby","go","python","haskell","javascript"];
-        $scope.prevlang = "ruby";
+        $scope.languages = ["c","c++","ruby","go","python","haskell","javascript"];
+        $scope.prevlang = "c";
         $scope.adjustbg = false;
         $scope.presettheme = "preset";
 
         var initialfaces = function (item) {
-            var faces = 
+            var faces =
                     {
                         deffacefg : "#303030", deffacebg : "#ffffff",
                         keywordface : "#000000", builtinface : "#000000",
@@ -58,7 +58,7 @@ angular.module('myApp.controllers', ['colorpicker.module'])
         // if faces are not stored in localStorage
         // set $scope.faces to initialfaces.
         $scope.faces = lstorage.loadFaces() || initialfaces();
-        
+
         // store faces in localStorage.
         $scope.saveTheme = function() {
             lstorage.setFaces($scope.faces);
